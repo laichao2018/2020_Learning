@@ -1,0 +1,40 @@
+/* body {
+    background-color: #f4f4f4;
+    color: #555555;
+    font-family: Loma;
+    font-size: 20px;
+}
+
+.box1 {
+    background-color: antiquewhite;
+    color: royalblue;
+}
+
+.box1 h1 {
+    font-size: large;
+    font-family: monospace;
+    font-style: italic;
+    text-transform: uppercase;
+    text-decoration: underline;
+    word-spacing: 2em;
+}
+
+.box1 {
+    margin: 20px 0px;
+    padding: 2px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.list li{
+    list-style-image: url("../image");
+}
+
+#fixed-button{
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+} */
