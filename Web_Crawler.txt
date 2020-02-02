@@ -5,6 +5,31 @@
 ====>>> Re库，正则表达式详解，提取页面关键信息
 ====>>> 第三方库 Scrapy 网络爬虫库
 
+=Requests库的信息获取官网：http://www.python-requests.org
+
+status_code==200表示链接成功
+
+需要理解各种文字编码的区别
+
+==================================================================================
+
+def getHTMLText(url):
+    try:
+        r = requests.get(url)
+        r.raise_for_status()  # 如果状态值不等于200，引发HTTPError异常
+        r.encoding = r.apparent_encoding
+        return r.text
+    except:
+        return "产生异常"
+
+
+if __name__ == "__main__":
+    url = "http://www.baidu.com"  # http://不可少
+    print(getHTMLText(url))
+
+==================================================================================
+
+http协议：
 
 
   
