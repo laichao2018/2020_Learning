@@ -32,6 +32,7 @@ def Search360Page(url):
         print(r.request.url)
         r.raise_for_status()
         print(len(r.text))
+        print(r.text)
         return
     except:
         print('Error')
