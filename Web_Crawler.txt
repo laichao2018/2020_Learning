@@ -31,5 +31,13 @@ if __name__ == "__main__":
 
 http协议：
 
+HTML文档 = 标签树 = BeautifulSoup类。 BeautifulSoup对应一个HTML/XML文档的全部内容
+BeautifulSoup库解析器（4种）：bs4的HTML解析器===pip install beautifulsoup4===、
+			lxml的HTML解析器===pip install lxml===、
+			lxml的XML解析器===pip install lxml===、
+			html5lib的解析器pip install html5lib
 
+
+BeautifulSoup库的使用：
+可以用.<tag>（如：.p）表示标签；.name 表示名称；.attrs 表示属性；.string 表示非属性字符串
   

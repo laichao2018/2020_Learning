@@ -1,4 +1,6 @@
 import requests
+from bs4 import BeautifulSoup
+
 
 #
 # r = requests.get("http://www.baidu.com")
@@ -36,3 +38,27 @@ import requests
 # hd = {'user-agent': 'chrome/10'}    # 定制HTTP头
 # r = requests.request('POST', 'http://python123.io/ws', headers=hd)
 
+# url = 'http://python123.io/ws/demo.html'
+# r = requests.get(url)
+# print(r.status_code)
+# demo = r.text
+#
+# soup = BeautifulSoup(demo, "html.parser")
+# print(soup.prettify())
+
+def ParsingHTML(url):
+    try:
+        r = requests.get(url)
+        r.raise_for_status()
+        demo = r.text
+        soup = BeautifulSoup(demo, 'html.parser')  # 对HTML文档进行解析
+        soup01 = BeautifulSoup(demo, 'xml')
+        soup02 = BeautifulSoup(demo, 'html5lib')
+        return soup02
+    except:
+        return "解析失败"
+
+
+if __name__ == "__main__":
+    url = 'http://python123.io/ws/demo.html'
+    print(ParsingHTML(url))
