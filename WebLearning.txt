@@ -1,0 +1,5 @@
+1. <div>元素表示块元素，主要是组合HTML元素的容器
+
+2. <span>元素表示内联元素，可以作为文本的容器
+
+3. 连接本地css文件的写法：可以在<head>中加一行===> <link rel="stylesheet" type="text/css" href="./css/my_css.css"
