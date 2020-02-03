@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>HTML Image</title>
-        <link rel="stylesheet" type="text/style" href="./css/html_with_image.css">
-    </head>
-    <body>
-        
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Image</title>
+    <link rel="stylesheet" type="text/style" href="./css/html_with_image.css">
+</head>
+
+<body>
+    <!-- <img src="./image/cat.png"> -->
+    <!-- <img src="./image/cat.png" alt="图片不存在了～" usemap="#001"> -->
+    <!--alt：如果图片不存在的时候显示的内容-->
+    <!--创建图片的分区响应图-->
+    <!-- <form><input type="image" src="./image/cat.png"></form> -->
+    <!-- <map name="001"> -->
+        <!-- <area href="http://www.baidu.com" shape="rect" coords="10,20,10,40" target="_blank"> -->
+        <!-- <area href="http://www.tencent.com" shape="rect" coords="20,30,10,40" target="_blank"> -->
+    <!-- </map> -->
+    <h1>创建图片的分区响应图</h1>
+    <p>只有点击<b>图片指定的位置</b>的时候，才会进入设定的超链接，在未设定的图片区域不会触发</p>
+    <img src="./image/cat.png" width="128" height="128" usemap="#map02">
+    <map name="map02">
+        <area href="http://www.baidu.com" shape="circle" coords="64,64,64">
+    </map>
+</body>
+
 </html>
