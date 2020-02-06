@@ -5,3 +5,9 @@
 3. 连接本地css文件的写法：可以在<head>中加一行===> <link rel="stylesheet" type="text/css" href="./css/my_css.css"
 
 4. <map>----创建文件分区响应的关键元素，<area>是设定具体区域的元素 shape: rect circle
+
+5. document.getElementsByClass 
+	document.querySelector("**")	//文档中查找**元素
+	document.querySelectorAll("**") 	//文档中查找所有的**元素
+
+6.
