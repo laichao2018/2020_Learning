@@ -43,6 +43,20 @@ set ignorecase 忽略大小写43：35美化！
 10.让Git不提交某些文件/忽略某些文件：创建文件 .gitignore 并在文件中添加文件名/文件夹名 即可 （若git已经开始追踪某些文件 则需要11）
 
 11.让Git不再追踪某个/某些文件：git rm --cached xx （xx为文件名）
+	====删除GitHub仓库的中某个文件夹
+	====在上传项目到GitHub时,忘记忽略了某个文件夹target,就直接push上去了, 最后意识到了此问题,决定删除掉远程仓库中的Photo albums文件夹。但是在github上只能删除仓库,却无法删除文件夹或文件, 所以只能通过命令来解决，具体方法如下：
+首先进入你的master文件夹下, Git Bash Here ,打开命令窗口
+
+	$ git --help 帮助命令
+
+	$ git pull origin master 将远程仓库里面的项目拉下来
+
+	$ dir  查看有哪些文件夹
+
+	===>>> $ git rm -r --cached Photo\ albums  删除Photo albums文件夹(这里的文件夹名有空格命令行需要用"\ "来拼接）
+
+	$ git commit -m '删除了Photo albums文件夹t'  提交,添加操作说明
+
 
 12.Git添加分支：git branch xx （xx为分支名）
 
