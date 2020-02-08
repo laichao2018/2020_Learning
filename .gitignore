@@ -1,3 +1,7 @@
 WebCrawlerProject/.idea/
 CLionProjects/CMakeListProject 
 CLionProjects/LeetCode_Project
+VS2019Projects/ReadCsvFile/.vs
+VS2019Projects/ReadCsvFile/ReadCsvFile/ReadCsvFile.vcxproj.user
+VS2019Projects/ReadCsvFile/ReadCsvFile/ReadCsvFile.vcxproj.filters
+VS2019Projects/ReadCsvFile/ReadCsvFile/ReadCsvFile.vcxproj
