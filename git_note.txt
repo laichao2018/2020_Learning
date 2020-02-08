@@ -47,13 +47,14 @@ set ignorecase 忽略大小写43：35美化！
 	====在上传项目到GitHub时,忘记忽略了某个文件夹target,就直接push上去了, 最后意识到了此问题,决定删除掉远程仓库中的Photo albums文件夹。但是在github上只能删除仓库,却无法删除文件夹或文件, 所以只能通过命令来解决，具体方法如下：
 首先进入你的master文件夹下, Git Bash Here ,打开命令窗口
 
-	$ git --help 帮助命令
+	$ git --help 帮助命令	（如想获取commit命令的帮助手册可以输入命令：git help commit）
 
 	$ git pull origin master 将远程仓库里面的项目拉下来
 
 	$ dir  查看有哪些文件夹
 
 	===>>> $ git rm -r --cached Photo\ albums  删除Photo albums文件夹(这里的文件夹名有空格命令行需要用"\ "来拼接）
+	（--cached参数是为了保留本地文件，只删除git仓库）
 
 	$ git commit -m '删除了Photo albums文件夹t'  提交,添加操作说明
 
@@ -72,4 +73,19 @@ set ignorecase 忽略大小写43：35美化！
 
 18.设置本地分支追踪远程分支：git push --set-upstream
 
-19.克隆仓库：git clone xxx（xxx为远程地址）
+19.克隆仓库：git clone xxx（xxx为远程地址）===>>> git clone http://**** rename	(最后一个参数表示克隆出来的文件重新取的名字)
+
+20. 忽略文件：.gitignore文件记录了忽略不加入git仓库的文件名称（可包含路径）,
+	$ cat .gitignore
+	*.[oa]
+	*~
+=====>>>第一行告诉 Git 忽略所有以 .o 或 .a 结尾的文件。一般这类对象文件和存档文件都是编译过程中出现的。
+	第二行告诉 Git 忽略所有以波浪符（~）结尾的文件，许多文本编辑软件（比如 Emacs）都用这样的文件名保存副本。 
+	此外，你可能还需要忽略 log，tmp 或者 pid 目录，以及自动生成的文档等等。 
+	要养成一开始就设置好 .gitignore 文件的习惯，以免将来误提交这类无用的文件。
+文件 .gitignore 的格式规范如下：
+*所有空行或者以 ＃ 开头的行都会被 Git 忽略。
+*可以使用标准的 glob 模式匹配。
+*匹配模式可以以（/）开头防止递归。
+*匹配模式可以以（/）结尾指定目录。
+**要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（!）取反。(++++  !lib.a ++++# track lib.a, even though you're ignoring .a files above)
