@@ -2,9 +2,6 @@ WebCrawlerProject/.idea/
 CLionProjects/CMakeListProject 
 CLionProjects/LeetCode_Project
 VS2019Projects/ReadCsvFile/.vs
-VS2019Projects/ReadCsvFile/ReadCsvFile/ReadCsvFile.vcxproj.user
-VS2019Projects/ReadCsvFile/ReadCsvFile/ReadCsvFile.vcxproj.filters
-VS2019Projects/ReadCsvFile/ReadCsvFile/ReadCsvFile.vcxproj
-/VS2019Projects/ReadCsvFile/ReadCsvFile/x64/Debug
-/VS2019Projects/ReadCsvFile/x64/Debug
+/VS2019Projects/ReadCsvFile/ReadCsvFile/x64
+/VS2019Projects/ReadCsvFile/x64
 /.gitattributes
