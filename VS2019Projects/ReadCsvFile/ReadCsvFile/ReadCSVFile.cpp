@@ -7,32 +7,58 @@
 #include<fstream>
 #include<sstream>
 using namespace std;
-int main() {
-	string FilePath("Data\\read_csv_test_file.csv");
+
+// 对CSV文件的读取操作
+vector<vector<string>> ReadCSVFile(string FilePath) {
+	vector<vector<string>>vvResult;
 	ifstream inFile(FilePath.c_str(), ios::in);
 	if (!inFile) {
-		cout << "read file error..\n";
-		return 0;
+		std::cout << "open file error.\n";
+		return {};
 	}
-	string lineStr;
-	vector<vector<string>>strArray;
-	while (getline(inFile, lineStr)) {
-		//cout << lineStr << endl;
-		stringstream ss(lineStr);
+	string line_string;
+	while (getline(inFile, line_string)) {
+		stringstream ss(line_string);
 		string str;
-		vector<string>lineArray;
-		while (getline(ss, str, ',')) {	//分隔逗号符号
-			lineArray.push_back(str);
+		vector<string>tempVecStr;
+		while (getline(ss, str, ',')) {	//使用逗号分隔对象
+			tempVecStr.push_back(str);
 		}
-		strArray.push_back(lineArray);
+		vvResult.push_back(tempVecStr);
 	}
-	for (vector<string> iii : strArray) {
-		for (string sss : iii) {
-			cout << sss << " ";
+	inFile.close();
+	return vvResult;
+}
+
+// 写入CSV文件的操作
+bool WriteCSVFile(vector<vector<string>>& data,string file_path) {
+	try {
+		ofstream outFile;
+		outFile.open(file_path, ios::out);
+		if (!outFile) {
+			cerr << "File write error.\n";
+			return false;
 		}
-		cout << endl;
+		for (auto aaa : data) {
+			for (auto bbb : aaa) {
+				outFile << bbb << ",";
+			}
+			outFile << endl;
+		}
+		outFile.close();
+		return true;
 	}
+	catch (const exception & e) {
+		std::cout << "Error happened in WriteCSVFile...\n";
+		return false;
+	}
+}
+
+int main() {
+	//===
+
 	system("pause");
 	return 0;
 }
+
 #endif // !PROJECT_READ_CSV_FILE
