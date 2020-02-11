@@ -3,6 +3,7 @@
 using namespace std;
 int main(){
     cout<<"Hello World"<<endl;
+    cout<<"Hello VSCode"<<endl;
     system("pause");
     return 0;
 }
