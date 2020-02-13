@@ -6,7 +6,7 @@ int titleToNumber(string s){
         return 0;
     }
     int result=0;
-    for(int i=s.length();i>=0;i--){ //从后往前走
+    for(int i=s.length()-1;i>=0;i--){ //从后往前走
         if(s[i]>='A'&&s[i]<='Z'){
             result+=i*26+s[i]-'A'+1;
         }
