@@ -1,5 +1,0 @@
-cmd  ————  命令提示符
-1. shutdown /s 
-    shutdown /r
-    shutdown /r /t 10   定时10s关机
-保存成.bat文件
