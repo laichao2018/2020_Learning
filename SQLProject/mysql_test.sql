@@ -1,0 +1,2 @@
+SHOW TABLES FROM sys;	# 执行选中部分
+SHOW TABLES;
