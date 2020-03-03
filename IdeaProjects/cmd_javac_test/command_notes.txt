@@ -1,0 +1,7 @@
+1. javac ***.java   先编译命令
+2. java 主类    执行输出
+
+jshell 小工具：
+cmd 命令行打开 jshell
+    输入：System.out.println("Hello World.\n");
+    退出：\exit
