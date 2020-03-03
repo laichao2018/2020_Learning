@@ -14,10 +14,11 @@ public class HelloWorld {
             }
             System.out.println();
         }*/
-        Student pStu = new Student();
-        pStu.Stu_Name = "Jack"; //修改类的成员的值
-        System.out.println(pStu.Stu_Name);
-        pStu.eat();
+        
+        //Student pStu = new Student();
+        //pStu.Stu_Name = "Jack"; //修改类的成员的值
+        //System.out.println(pStu.Stu_Name);
+        //pStu.eat();
     }
 }
 
