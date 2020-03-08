@@ -52,7 +52,7 @@ def dp_subset(arr,sum):
                 A=subset[i-1,j-arr[i]]
                 B=subset[i-1,j]
                 subset[i,j]=A or B
-    return subset[len(arr)-1,sum];
+    return subset[len(arr)-1,sum]
 
 if __name__=='__main__':
    # print(rec_opt(arr,6))
