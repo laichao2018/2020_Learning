@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include<vector>
 using namespace std;
 int titleToNumber(string s){
     if(s.empty()){
@@ -16,8 +17,11 @@ int titleToNumber(string s){
 
 
 int main(){
-    
-    
+    vector<int>vec{1,2,3,4,5};
+    for(auto init:vec){
+        cout<<init<<endl;
+    }
+
     system("pause");
     return 0;
 }
