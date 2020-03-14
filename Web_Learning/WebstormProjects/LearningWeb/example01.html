@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Data</title>
+    <link rel="stylesheet" href="..//css//form_css.css">
+    <!--    <link rel="script" href="..//JavaScript//form_js.js">-->
+</head>
+<body>
+<form action="">
+    <fieldset>
+        <legend>学生档案</legend>
+        <label for="user_name">姓名：</label><br>
+        <input type="text" id="user_name" name="user_name" placeholder="请输入姓名"><br>
+        <label for="user_phone">手机号码:</label><br>
+        <input type="tel" id="user_phone" name="user_phone" placeholder="请输入电话号码" pattern="^1\d{10}$" required><br>
+        <label for="eMail">邮箱:</label><br>
+        <input type="email" required id="eMail" name="eMail"><br>
+        <label for="college">所属语言:</label><br>
+        <input type="text" id="college" name="college" list="cList" placeholder="请选择">
+        <datalist id="cList">
+            <option value="C++"></option>
+            <option value="Java"></option>
+            <option value="PHP"></option>
+        </datalist>
+        <br>
+        <label for="score">入学成绩:</label><br>
+        <input type="number" max="100" min="0" value="0" id="score" name="score"><br>
+        <label for="level">基础水平:</label>
+        <meter id="level" max="100" min="0" low="59" high="85"></meter>
+        <br><br>
+        <label for="inTime">入学日期:</label><br>
+        <input type="date" id="inTime" name="inTime"><br>
+        <label for="sex"></label>
+        <input type="text" id="sex" name="sex" placeholder="请输入性别"><br>
+    </fieldset>
+</form>
+<script>
+    document.getElementById("score").oninput = function () {
+        document.getElementById("level").value = this.value;
+    }
+    document.getElementsByName("number").oninput = function () {
+        document.getElementById("number").value = this.value;
+        console.log(this.value);
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Start Web</title>
+    <!-- <style>
+         /*行级元素在设置宽度的时候是失效*/
+         main > article {
+             /*行级元素转换为块级元素*/
+             /*IE 浏览器不支持，需要手动创建标签*/
+             display: block;
+             width: 20px;
+             height: 30px;
+             background-color: red;
+             float: left;
+         }
+     </style>-->
+    <!-- <script>
+        //专门解决IE浏览器不兼容问题的解决插件：html5shiv.min.js
+        //手动创建标签默认的标签都是行级元素
+         document.createElement("Header");
+     </script>-->
+
+</head>
+<body>
+<!--<nav>导航</nav>
+<main>
+    <article>左边</article>
+    <article>右边</article>
+</main>
+<div class="header">
+
+</div>
+<div class="nav">
+
+</div>
+<div class="mainContent">
+    <div class="left"></div>
+    <div class="right"></div>
+</div>
+<div class="footer">
+
+</div>-->
+
+<!--<form action="">
+    &lt;!&ndash; 表单 type元素限制输入内容 &ndash;&gt;
+    用户名: <input type="text" name="UserName"><br>
+    密码: <input type="password" name="PassWord"><br>
+    &lt;!&ndash; email提供了默认的电子邮箱的完整验证 &ndash;&gt;
+    邮箱: <input type="email" name="E_mail"><br>
+    &lt;!&ndash; tel的目的不是为了验证电话，是为了在移动端能打开数字键盘 &ndash;&gt;
+    电话: <input type="tel"><br>
+    &lt;!&ndash; 验证网址，必须包含http &ndash;&gt;
+    网址: <input type="url"><br>
+    数量: <input type="number" value="20" max="100" min="0"><br>
+    请输入商品名称: <input type="search"><br>&lt;!&ndash; 输入体验更好 &ndash;&gt;
+    范围: <input type="range" max="100" min="0" value="50">
+    颜色拾取: <input type="color"><br>
+    &lt;!&ndash; 日期事件相关 &ndash;&gt;
+    时间: <input type="time"><br>
+    日期: <input type="date"><br>
+    时间和日期: <input type="datetime-local"><br>
+    星期: <input type="week"><br>
+    <input type="submit">
+</form>-->
+
+<!--<form action="" id="form_01">
+    &lt;!&ndash; 表单新增的其他属性 &ndash;&gt;
+    &lt;!&ndash; autofocus: 自动获取焦点 &ndash;&gt;
+    &lt;!&ndash; autocomplete: 自动完成 on/off
+     1. 必须提交过
+     2. 当前添加的autocomplete的元素必须要有name属性&ndash;&gt;
+    用户名: <input type="text" placeholder="请输入用户名" name="user_name" autofocus autocomplete="on"><br>
+    <input type="submit"><br>
+    &lt;!&ndash; required: 必须输入 &ndash;&gt;
+    &lt;!&ndash; pattern: 正则表达式
+    *: 代表任意个
+    ?: 代表0个或1个
+    +: 代表1个或者多个 &ndash;&gt;
+    手机号: <input type="tel" required pattern="^(\+86)?1\d{10}$"><br>
+    &lt;!&ndash; multiple可以选择多个文件 &ndash;&gt;
+    文件: <input type="file" name="Photos" multiple><br>
+
+    &lt;!&ndash; 新增的表单元素（了解）&ndash;&gt;
+    &lt;!&ndash;专业:
+    <select name="" id="">
+        <option value="1">C++</option>
+        <option value="2">Java</option>
+        <option value="3">JavaScript</option>
+    </select>&ndash;&gt;
+    &lt;!&ndash; 不仅可以选择，还可以输入 &ndash;&gt;
+    专业:
+    <input type="text" list="datalist_01">
+    &lt;!&ndash; datalist创建选择列表 &ndash;&gt;
+    <datalist id="datalist_01">
+        <option value="C++" label="===="></option>
+        <option value="Java" label="++++"></option>
+        <option value="JavaScript" label="****"></option>
+    </datalist>
+
+</form>-->
+
+<!-- form: 指定表单，指定表单提交时，此input也会被提交 -->
+<!--<input type="text" name="address" form="form_01">-->
+
+<!--新增表单事件-->
+<form action="">
+    用户名: <input type="text" name="user_name" id="user_name"><br>
+    电话: <input type="tel" name="user_phone" id="user_phone"><br>
+    <input type="submit">
+</form>
+<script>
+    /*  oninput:监听当前指定元素内容的改变，只要内容改变就会触发这个事件  */
+    document.getElementById("user_name").oninput = function () {
+        console.log("oninput" + this.value);
+    }
+
+    /*  onkeyup:键盘弹起的时候触发，每一个键弹起都会触发一次  */
+    document.getElementById("user_name").onkeyup = function () {
+        console.log("onkeyup: " + this.value);
+    }
+
+    /*  oninvalid:当验证不通过的时候触发  */
+    document.getElementById("user_phone").oninvalid = function () {
+        /*设置默认的提示信息*/
+        this.setCustomValidity("请输入合法的十一位手机号码");
+    }
+</script>
+
+</body>
+<!--<footer>
+    &lt;!&ndash; 底部&ndash;&gt; 
+</footer>-->
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

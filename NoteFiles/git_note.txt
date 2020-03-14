@@ -32,7 +32,10 @@ set ignorecase 忽略大小写43：35美化！
 
 5.本次还没有提交的更改：git diff（比较工作区与暂存区的区别）
 
-6.回滚，撤销提交操作：git reset
+6.回滚，撤销提交操作：git reset <--hard>
+	git reset <commit-hash-value>		回退到指定的commit哈希值
+	commit哈希值查看方法：git log
+				所有的操作记录：git reflog	
 
 7.向Git提交自己身份（name）：git config --global user.name "xxx"
 
