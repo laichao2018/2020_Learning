@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建CSS盒子模型</title>
+    <style type="text/css">
+        /*.class01 {
+            border: 1px solid black;
+            background-color: antiquewhite;
+            padding-top: 100px;
+            background-clip: content-box;
+            padding: 100px;
+            !*padding-left: 100px;
+            padding-right: 100px;
+            padding-bottom: 100px;*!
+            margin: 100px;
+        }*/
+
+        .div {
+            text-align: center;
+        }
+
+        .img {
+            margin-top: 130px;
+            width: 450px;
+            height: 220px;
+        }
+
+        html:hover .img {
+            /*animation-name: img;
+            animation-delay: 500ms;
+            animation-duration: 1000ms;
+            animation-fill-mode: forwards;*/
+            transition-delay: 500ms;
+            transition-duration: 1s;
+            width: 100px;
+            height: 50px;
+            margin-top: 0px;
+        }
+
+        /*@keyframes img {
+            to {
+                width: 100px;
+                height: 50px;
+                margin-top: 0px;
+            }
+        }*/
+
+        p {
+            font-family: 微软雅黑;
+            font-size: 40px;
+            text-shadow: 1px 1px 2px black;
+            opacity: 1; /*透明度*/
+        }
+
+        html:hover p {
+            transition-delay: 500ms;
+            transition-duration: 1s;
+            font-family: 微软雅黑;
+            font-size: 40px;
+            text-shadow: 1px 1px 2px black;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<!--<div class="class01">靠谱学院</div>-->
+<div class="div">
+    <img class="img" src="Media/header.jpg">
+    <p>logo</p>
+</div>
+</body>
+</html>

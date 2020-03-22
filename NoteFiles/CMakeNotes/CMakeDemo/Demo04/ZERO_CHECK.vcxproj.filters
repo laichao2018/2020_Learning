@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\LaiChao\GitProject\2020_vocation_learning_notes_section\NoteFiles\CMakeNotes\CMakeDemo\Demo04\CMakeFiles\a85112f5a01e73e885efb90be4ef73d8\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{C759FD49-983F-3EE4-A097-F71E658B1071}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

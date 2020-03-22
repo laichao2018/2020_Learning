@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Reader</title>
+</head>
+<body>
+<!--FileReader读取文件-->
+<form>
+    文件: <input type="file" name="myFile" id="myFile" onchange="getFileContent();"><br>
+    <input type="submit">
+</form>
+<script>
+    function getFileContent() {
+        //console.log(123);
+        var reader=new FileReader();
+        var file=document.querySelector("#myFile").files;
+        
+    }
+</script>
+
+</body>
+</html>

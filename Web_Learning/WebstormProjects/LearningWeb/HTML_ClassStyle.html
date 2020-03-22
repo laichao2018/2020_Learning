@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class Style</title>
+</head>
+<body>
+<!--自定义属性-->
+<!--定义规范：
+data开头，data后面必须至少有一个字符，多个单词使用-连接
+-->
+<p data-school-name="ITcast">传智播客</p>
+<div>
+    <img src="./Media/header.jpg" alt="">
+    <input type="button" id="full" value="全屏">
+    <input type="button" id="cancelFull" value="退出全屏">
+    <input type="button" id="isFull" value="是否全屏">
+</div>
+<!--取值-->
+<script>
+    //获取自定义属性值
+    window.onload = function () {
+        var p = document.querySelector("p");
+        var value = p.dataset["schoolName"];
+        console.log(value);
+    }
+
+    //ononline/onoffline：网络 连接/断开 时触发
+    window.addEventListener("online", function () {
+        alert("网络连接");
+    })
+    window.addEventListener("offline", function () {
+        alert("网络断开");
+    })
+
+    //全屏显示:不同浏览器需要添加不同的前缀
+    window.onload = function () {
+        var div=document.querySelector("div");
+        document.querySelector("#full").onclick=function () {
+            div.requestFullscreen();
+        }
+    }
+
+</script>
+
+
+</body>
+</html>

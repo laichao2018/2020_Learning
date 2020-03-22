@@ -1,0 +1,4 @@
+D:/LaiChao/GitProject/2020_vocation_learning_notes_section/NoteFiles/CMakeNotes/CMakeDemo/Demo04/CMakeFiles/Demo.dir
+D:/LaiChao/GitProject/2020_vocation_learning_notes_section/NoteFiles/CMakeNotes/CMakeDemo/Demo04/CMakeFiles/ALL_BUILD.dir
+D:/LaiChao/GitProject/2020_vocation_learning_notes_section/NoteFiles/CMakeNotes/CMakeDemo/Demo04/CMakeFiles/ZERO_CHECK.dir
+D:/LaiChao/GitProject/2020_vocation_learning_notes_section/NoteFiles/CMakeNotes/CMakeDemo/Demo04/math/CMakeFiles/MATH_LIB.dir

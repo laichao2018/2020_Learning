@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\LaiChao\GitProject\2020_vocation_learning_notes_section\NoteFiles\CMakeNotes\CMakeDemo\Demo04\math\MathFunc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\LaiChao\GitProject\2020_vocation_learning_notes_section\NoteFiles\CMakeNotes\CMakeDemo\Demo04\math\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{C820D6B6-49B1-37E0-B0BD-08610A44958C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
