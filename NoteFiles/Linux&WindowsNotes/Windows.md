@@ -3,7 +3,7 @@
 1. + shutdown /s &emsp;&emsp; **关机**
     + shutdown /r &emsp;&emsp; **重启**
     + shutdown /r /t 5 &emsp;&emsp; **定时5秒重启(关机/s)**
-    +slidetoshutdown /s 
+    + slidetoshutdown /s 
 >> 保存成 .bat 格式文件Windows系统可以直接执行
 -------------------------------------------
 2.

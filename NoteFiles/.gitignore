@@ -1,1 +1,15 @@
+<<<<<<< HEAD
 *.exe
+=======
+WebCrawlerProject/.idea/
+CLionProjects/CMakeListProject 
+CLionProjects/LeetCode_Project
+VS2019Projects/ReadCsvFile/.vs
+/VS2019Projects/ReadCsvFile/ReadCsvFile/x64
+/VS2019Projects/ReadCsvFile/x64
+/.gitattributes
+/VS2019Projects/Project1
+
+*.mp4
+*.avi
+>>>>>>> 40cef337a22511a2c55b912ef74417aa6ab80527
