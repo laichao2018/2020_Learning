@@ -10,11 +10,42 @@
 =============               Git 命令             =============
 ==============================================================
 
-一、查看配置
-    git config -l
+配置文件
+== 所有的系统配置文件都在/Git/etc/.gitconfig
+== 所有的用户配置文件都在/User/.gitconfig
 
-二、查看系统配置
-    git config --system --list
+    一、查看配置
+        git config -l
 
-三、查看全局配置
-    git config --global --list
+    二、查看系统配置
+        git config --system --list
+
+    三、查看全局配置
+        git config --global --list
+
+    四、用户配置        ****必须配置****
+        git config --global --user.name "ZhangSan"
+        git config --global --user.email "12345@gmail.com"
+
+Git原理
+== 工作区域：工作目录、暂存区、资源库（或再加上远程仓库）共四个区域
+    一、工作区：平时存放代码的地方
+    二、暂存区：暂时存放改动，事实上只是一个文件，保存即将提交到文件列表信息
+    三、仓库区：安全存放数据的位置，有提交的所有的版本数据，HEAD指向最新放入仓库的版本
+    四、远程仓库：托管代码的平台，例如Github
+== 文件状态：未跟踪、入库未修改、文件已修改、暂存状态
+    一、未跟踪：在文件夹中，但是不参与版本控制
+    二、入库未修改：版本库中的文件快照与文件夹中完全一致，可以成为已修改状态或者 git rm 移出版本库
+    三、文件已修改：文件仅仅是已经修改，没有进行其他操作，可以 git add 加入暂存，使用 git checkout 丢弃修改
+        （checkout即从库中取出文件，覆盖当前修改）
+    四、暂存状态：同步到库中，库中文件与本地文件又变为一致，执行 git reset HEAD filename 取消暂存，文件状态为Modified
+
+Git忽略文件
+== 
+    *.txt       #忽略所有的txt文件
+    !lib.txt    #但是lib.txt文件除外
+
+    (" / " 在前和在后区别：在前表示往上级目录，往下表示往下级目录)
+    /temp       #忽略根目录下的TODO文件，但是不包括其他目录temp
+    build/      #忽略build文件夹下所有文件
+    doc/*.txt   #忽略doc文件夹下所有txt文件，但是不包括doc/text/1.txt

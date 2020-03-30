@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Hello JavaScript</title>
 
-    <script src="JavaScript/HelloScript.js"></script>
+    <!--    <script src="JavaScript/HelloScript.js"></script>-->
     <script>
         //alert("Hello World.\n");    //弹出窗口显示
 
@@ -47,14 +47,25 @@
 
         // console.log(1 == 1);
 
-        document.write("<h1><b>Hello World.<\h1>\n");
+        // document.write("<h1><b>Hello World.<\h1>\n");
+        /// ！JS中变量是保存在栈内存的，对象都是保存在堆内存中（new了一个堆内存空间）
+        /// ！栈内存中保存堆内存中对象的地址，指向它的对象，每创建一个新的对象都会在堆内存中开辟一个空间
+        /// ！栈内存中的对象可以指向同一个堆内存对象，当一个变量修改属性的时候，另一个对应的指向的值也会改变
+        /*var obj = new Object();
+        var obj3 = new Object();
+        var obj2 = obj; //指向与变量obj同一个堆内存对象
+        obj2 = null;  //断开连接
 
+        console.log(obj);
+        console.log(obj2);
+        console.log(obj==obj3); //比较的是两个变量保存的指向堆内存对象的地址，因为不是一个对象，不管
+        // 里面的属性值是否相等，都是返回false*/
     </script>
 </head>
 
 <body>
-    <!--不推荐的写法-->
-    <!--<button onclick="alert('Hello World.\n')">点我一下</button>
+<!--不推荐的写法-->
+<!--<button onclick="alert('Hello World.\n')">点我一下</button>
 <a href="javascript:alert('Hello World.\n')">你也点我一下</a> //script加在超链接里面-->
 
 </body>
