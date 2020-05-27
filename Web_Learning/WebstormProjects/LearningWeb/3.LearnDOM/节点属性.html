@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节点属性</title>
+</head>
+<body>
+<div id="box" title="title">我是我一个文本节点<!--我是注释--></div>
+<script>
+
+    /// 1. 元素节点
+    var oDiv = document.getElementById('box');
+    // console.log(oDiv);  /// 获取的是整个部分
+    // console.log(oDiv.nodeName);
+    // console.log(oDiv.nodeValue);
+    // console.log(oDiv.nodeType);
+
+    /// 2.获取属性节点
+    var attrNode = oDiv.attributes[0];
+    // console.log(attrNode);   /// id='box'
+    // console.log(attrNode.nodeName);
+    // console.log(attrNode.nodeValue);
+    // console.log(attrNode.nodeType);
+
+    /// 3. 获取文本节点
+    var textNode = oDiv.childNodes;
+    // console.log(textNode[0]);
+    // console.log(typeof textNode)    /// object
+    // console.log(textNode[0].nodeName);
+    // console.log(textNode[0].nodeValue);
+    // console.log(textNode[0].nodeType);
+
+    /// 4. 获取注释节点
+    var commentNode = oDiv.childNodes[1]
+    console.log(commentNode);
+    console.log(commentNode.nodeName);
+    console.log(commentNode.nodeValue);
+    console.log(commentNode.nodeType);
+
+</script>
+</body>
+</html>

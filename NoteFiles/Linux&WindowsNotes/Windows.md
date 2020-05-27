@@ -15,6 +15,10 @@ cmd 常用命令
 创建文件夹：mkdir dirname
 删除文件夹：rmdir dirname
 
+打开计算器 calc
+打开任务列表 tasklist
+循环五次 for /l %i in (1,1,5) do echo China
+
 -------------------------------------------
 
 

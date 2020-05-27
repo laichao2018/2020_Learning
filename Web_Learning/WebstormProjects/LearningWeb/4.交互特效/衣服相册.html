@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>衣服相册</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        ul {
+            list-style: none;
+            overflow: hidden;
+        }
+
+        ul li {
+            float: left;
+            width: 50px;
+            height: 50px;
+            margin-left: 10px;
+            margin-top: 20px;
+            border: 2px solid #fff;
+        }
+
+        ul li.active {
+            border-color: red;
+        }
+
+        class
+
+        =
+        small
+
+        ""
+    </style>
+</head>
+<body>
+<img src="..//Img//01.jpg" id="big_img" width="500" height="600">
+<ul>
+    <li class="active">
+        <a href="">
+            <img src="..//Img//01.jpg" width="46px" height="46px" class="small">
+        </a>
+    </li>
+    <li>
+        <a href="">
+            <img src="..//Img//02.jpg" width="46px" height="46px" class="small">
+        </a>
+    </li>
+    <li>
+        <a href="">
+            <img src="..//Img//03.jpg" width="46px" height="46px" class="small">
+        </a>
+    </li>
+    <li>
+        <a href="">
+            <img src="..//Img//04.jpg" width="46px" height="46px" class="small">
+        </a>
+    </li>
+    <li>
+        <a href="">
+            <img src="..//Img//05.jpg" width="46px" height="46px" class="small">
+        </a>
+    </li>
+</ul>
+<script>
+    /// 1. 获取事件源
+    var bigImg = document.getElementById('big_img');
+    var smallImg = document.getElementsByClassName('small');
+
+    for (var i = 0; i < smallImg.length; i++) {
+        /// 遍历集合，给每个img标签添加事件
+        smallImg[i].onmouseover = function () {
+            /// 给鼠标悬浮的img的爷爷标签添加类
+            for (var j = 0; j < smallImg.length; j++) {
+                smallImg[j].parentNode.parentNode.setAttribute('class', ' ');
+            }
+            this.parentNode.parentNode.setAttribute('class', 'active');
+            /// 修改大图的src，先获取当前小图的src
+            var currImg = this.getAttribute('src');
+            console.log(currImg);
+            bigImg.setAttribute('src', currImg);
+        }
+    }
+</script>
+</body>
+</html>

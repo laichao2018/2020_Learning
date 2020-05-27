@@ -6,68 +6,13 @@
     <title>Hello JavaScript</title>
 
     <!--    <script src="JavaScript/HelloScript.js"></script>-->
-    <script>
-        //alert("Hello World.\n");    //弹出窗口显示
-
-        //document.write("Hello World.\n"); //向HTML->body写入
-
-        //console.log("Hello World.\n");
-
-        //script 标签一旦用于外部文件，就不能在内部写，写了也不会执行；
-        //如有需要可以新建一个script标签
-
-        //强制类型转换
-        /*var a = 123;
-        console.log(typeof a);
-        a = a.toString()    //转String
-        console.log(typeof a);
-        String(a);  //适用范围更广
-        var s = "123";
-        s = Number(s);  //字符串转数值，非数值结果为NaN，空或空格字符串结果为0，Boolean转结果0或1
-        console.log(typeof s);*/
-
-        /*var a = "123px";
-        //a = parseInt(a);  //把一个字符串转Int\ parseFloat()
-        a = parseInt(a, 10);   //第二个参数表示要转换成的进制
-        var b = "123.4px";
-        b = parseFloat(b);  //对于要转换非String类型的值，会将值先转成String再计算*/
-
-        /* var a = 0x123;  //十六进制
-         var b = 0xfff;
-         var c = 0o70;   //八进制
-         var d = 0b110;  //二进制*/
-
-        // // 运算符/操作符
-        // var a = 100;
-        // var result = typeof a;
-        // console.log(result);
-
-        // var result = "123" + 1;
-        // console.log(result);
-
-        // console.log(1 == 1);
-
-        // document.write("<h1><b>Hello World.<\h1>\n");
-        /// ！JS中变量是保存在栈内存的，对象都是保存在堆内存中（new了一个堆内存空间）
-        /// ！栈内存中保存堆内存中对象的地址，指向它的对象，每创建一个新的对象都会在堆内存中开辟一个空间
-        /// ！栈内存中的对象可以指向同一个堆内存对象，当一个变量修改属性的时候，另一个对应的指向的值也会改变
-        /*var obj = new Object();
-        var obj3 = new Object();
-        var obj2 = obj; //指向与变量obj同一个堆内存对象
-        obj2 = null;  //断开连接
-
-        console.log(obj);
-        console.log(obj2);
-        console.log(obj==obj3); //比较的是两个变量保存的指向堆内存对象的地址，因为不是一个对象，不管
-        // 里面的属性值是否相等，都是返回false*/
-    </script>
+    <script src="JavaScript/About_Object.js"></script>
 </head>
 
 <body>
 <!--不推荐的写法-->
 <!--<button onclick="alert('Hello World.\n')">点我一下</button>
 <a href="javascript:alert('Hello World.\n')">你也点我一下</a> //script加在超链接里面-->
-
 </body>
 
 </html>

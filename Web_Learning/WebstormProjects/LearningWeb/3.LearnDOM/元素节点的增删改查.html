@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>元素节点的增删改查</title>
+</head>
+<body>
+<div id="box">
+    <p id="active">mjj</p>
+    <!--    <p>alex</p>-->
+</div>
+<script>
+    var oDiv = document.getElementById('box');
+    var newNode = document.createElement('p');
+    newNode.setAttribute('class', 'active');
+    oDiv.appendChild(newNode);
+
+    /// 添加文本
+    /// 方式01
+    // var textNode = document.createTextNode('Alex');
+    // newNode.appendChild(textNode);
+
+    /// 方式02
+    newNode.innerHTML = '<a href="#">alex@qq.com</a>';
+    // newNode.innerText = '<a href="#">alex@qq.com</a>';   /// 只能渲染文本
+
+    var newNode2 = document.createElement('p');
+    newNode2.setAttribute('a', 'hh');   /// 要添加属性
+    newNode2.innerHTML = '<a href="#">alex@qq.com</a>';
+    // newNode2.innerHTML("Hello World.");
+    /// 参数一为新插入节点，第二个元素是参考的节点
+    oDiv.insertBefore(newNode2, document.getElementById('active'));
+
+    /// 删除对象
+    // oDiv.removeChild(document.getElementById('active'));
+
+    var newNode3 = document.createElement('a');
+    newNode3.setAttribute('href', 'https://www.baidu.com');
+    /// 替换对象
+    newNode3.innerHTML = '百度一下，你就知道';
+    oDiv.replaceChild(newNode3, document.getElementById('active'));
+</script>
+</body>
+</html>

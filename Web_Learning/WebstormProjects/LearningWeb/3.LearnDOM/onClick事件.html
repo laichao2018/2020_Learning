@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onClick事件</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    var oDiv = document.getElementById('box');
+    // oDiv.onclick = function () {
+    // alert('事件被触发');
+    // }
+    // function add() {
+    //     alert('事件被触发');
+    // }
+    // oDiv.onclick = add;     /// 如果是add()则没有点击也直接触发
+
+    var isRed = false;
+    oDiv.onclick = function () {
+        // console.log(this);  /// this指向当前元素节点对象
+        if (!isRed) {
+            this.style.backgroundColor = 'red';
+            isRed = true;
+        } else {
+            this.style.backgroundColor = 'blue';
+            isRed = false;
+        }
+    }
+
+
+</script>
+</body>
+</html>

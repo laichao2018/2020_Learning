@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性节点</title>
+    <style>
+        #box {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<h2>你要买什么吗?</h2>
+<p title="请您选择购买的课程">本课程是Web全栈课程,期待您的购买</p>
+<ul id="classlist">
+    <li class="item">JavaScript</li>
+    <li class="item">CSS</li>
+    <li class="item">HTML</li>
+</ul>
+<script>
+    // var oP = document.getElementsByTagName('p')[0];
+    // var title = oP.getAttribute('title');   /// 获取这个属性节点的值(请您选择购买的课程)
+    // console.log(title);
+
+    /// 设置属性值(name,value)
+    var oP = document.getElementsByTagName('p')[0];
+    oP.setAttribute('id', 'box');   /// 添加id属性,值为box
+
+</script>
+</body>
+</html>

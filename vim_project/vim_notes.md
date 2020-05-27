@@ -26,3 +26,5 @@
         或者 2. shift+g
 
 11. 插件管理系统：vimplug
+
+12. 关于vim的复制粘贴快捷操作：https://blog.csdn.net/feng98ren/article/details/80509607

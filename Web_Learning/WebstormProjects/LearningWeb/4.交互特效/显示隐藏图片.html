@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>显示/隐藏图片</title>
+</head>
+<body>
+<button id="display_pic">隐藏</button>
+<br>
+<br>
+<img src="..//Img//03.jpg" id="displayPic">
+<script>
+    var btn = document.getElementById('display_pic');
+    var img = document.getElementById('displayPic');
+    var has_display = true;
+    btn.onclick = function () {
+        if (has_display) {
+            this.innerHTML = '显示';
+            img.style.display = 'none';
+            has_display = false;
+        } else {
+            this.innerHTML = '隐藏';
+            img.style.display = 'block';
+            has_display = true;
+        }
+    }
+</script>
+</body>
+</html>

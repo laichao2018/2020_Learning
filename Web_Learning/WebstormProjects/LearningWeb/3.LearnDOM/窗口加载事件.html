@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>窗口加载事件</title>
+    <script>
+        // setTimeout(function () {
+        //     var oDiv = document.getElementById('box');
+        //     console.log(oDiv);
+        //     oDiv.onclick = function () {
+        //         this.innerHTML = 'alex';
+        //     }
+        // }, 1000);
+
+        window.onload = function () {     /// 等待文档元素加载完之后调用onload()(会有覆盖事件，只有一个才可以)
+            var oDiv = document.getElementById('box');
+            console.log(oDiv);
+            oDiv.onclick = function () {
+                this.innerHTML = 'alex';
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="box">MJJ</div>
+
+</body>
+</html>

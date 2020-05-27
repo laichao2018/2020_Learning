@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器</title>
+</head>
+<body>
+<script>
+    /// 延迟性操作
+    // window.setTimeout(function () {
+    //     window.alert("Hello World.");
+    // }, 2000);    ///第二个参数为延迟的时间，单位为毫秒
+
+    // window.setTimeout(function () {
+    //     console.log("Hello World");
+    // }, 0);  /// 这里虽然延迟为0，但是仍然会在后出现
+    // console.log("Hello JavaScript");
+
+    /// 周期性重复操作
+    // var count = 0;
+    // var timer=null;
+    // window.setInterval(function () {
+    //     count++;
+    //     console.log("count: " + count);
+    // }, 1000);
+    // clearInterval()
+    var count = 0;
+    var timer = null;
+    timer = window.setInterval(function () {
+        count++;
+        console.log("count:" + count);
+        if (count === 5) {
+            window.clearInterval(timer);
+        }
+    }, 1000)    /// 每间隔1s时间执行一次function
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节点</title>
+</head>
+<body>
+<h2>你要买什么吗?</h2>
+<p title="请您选择购买的课程">本课程是Web全栈课程,期待您的购买</p>
+<ul id="classlist">
+    <li class="item">JavaScript</li>
+    <li class="item">CSS</li>
+    <li class="item">HTML</li>
+</ul>
+
+<!--    节点node-->
+<!--1. 元素节点; 2.文本节点; 3.属性节点-->
+<script>
+    /// 获取元素节点的方式
+    /// 1. getElementById()
+    // var eleNode = document.getElementById('classlist');
+    // console.log(eleNode);
+    // console.log(typeof eleNode);
+    //
+    // ///2. getElementsByTagName(); === 获取的是一个节点对象集合
+    // var olis = document.getElementsByTagName('li');
+    // console.log(olis);
+    // console.log(typeof olis);
+    // console.log(olis.length);
+    // for (var i = 0; i < olis.length; i++) {
+    //     console.log(olis[i]);
+    // }
+
+    /// 3. getElementsByClassName()
+    var classVar=document.getElementsByClassName('item');
+    console.log(classVar);
+    console.log(typeof classVar);
+
+</script>
+</body>
+</html>

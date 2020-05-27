@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>切换图片</title>
+</head>
+<body>
+<img src="..\\Img\\01.jpg" height="800" width="670" id="girlImg">
+<button id="prePic">上一张</button>
+<button id="nextPic">下一站</button>
+
+<script>
+    var picElement = document.getElementById('girlImg');
+    var preBtn = document.getElementById('prePic');
+    var nextBtn = document.getElementById('nextPic');
+    var count = 1;
+    preBtn.onclick = function () {
+        if (count === 5) {
+            count = 1;
+        } else {
+            count++;
+        }
+        picElement.setAttribute('src', `..\\Img\\0${count}.jpg`);
+    }
+    nextBtn.onclick = function () {
+        if (count === 1) {
+            count = 5;
+        } else {
+            count--;
+        }
+        picElement.setAttribute('src', `..\\Img\\0${count}.jpg`);
+    }
+</script>
+</body>
+</html>

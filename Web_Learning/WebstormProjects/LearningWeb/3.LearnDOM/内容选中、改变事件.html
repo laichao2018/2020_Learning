@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内容选中与改变事件</title>
+</head>
+<body>
+<textarea cols="30" rows="10">社会主义核心价值观</textarea>
+<input type="text" name="" value="mjj">
+<script>
+    var textArea = document.getElementsByTagName('textarea')[0];
+    var inputArea = document.getElementsByTagName('input')[0];
+    textArea.onselect = function () {
+        console.log('内容被选中');
+    }
+    inputArea.onchange = function () {
+        console.log('内容被改变');
+    }
+    inputArea.oninput = function () {
+        console.log('正在输入...');
+        console.log(this.value);/// 获取到改变的内容的值
+    }
+
+</script>
+</body>
+</html>

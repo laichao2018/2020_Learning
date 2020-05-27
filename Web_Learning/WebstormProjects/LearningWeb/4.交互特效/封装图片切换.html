@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>封装图片切换</title>
+    <style>
+        /*清空样式*/
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #box {
+            border: 1px solid #cccccc;
+            width: 450px;
+            height: 70%;
+            padding-top: 450px;
+            background: url("..\\Img\\01.jpg") no-repeat;
+        }
+
+        #box ul li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li>
+            <img src="..//Img//01.jpg" class="item" width="250px" height="250px">
+        </li>
+        <li>
+            <img src="..//Img//02.jpg" class="item" width="250px" height="250px">
+            </l
+        <li>
+            <img src="..//Img//03.jpg" class="item" width="250px" height="250px">
+        </li>
+        <li>
+            <img src="..//Img//04.jpg" class="item" width="250px" height="250px">
+        </li>
+        <li>
+            <img src="..//Img//05.jpg" class="item" width="250px" height="250px">
+        </li>
+    </ul>
+</div>
+<script>
+    /// 1. 获取事件源
+    function $(id) {
+        return typeof id === 'string' ? document.getElementById(id) : null;
+    }
+
+    var items = document.getElementsByClassName('item');
+    console.log(items);
+    for (var i = 0; i < items.length; i++) {
+        items[i].id = i + 1;
+        console.log(this.id);
+        items[i].onmouseover = function () {
+            $('box').style.background = `url('..//Img//0${this.id}.jpg') no-repeat`
+        }
+    }
+
+</script>
+</body>
+</html>
