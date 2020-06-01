@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>千千音乐盒实现全选反选</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #panel {
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            width: 400px;
+            padding: 20px;
+            margin: 100px auto;
+        }
+
+        .panel-footer {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="panel">
+    <div class="panel-title">
+        <h3>千千音乐盒</h3>
+        <hr>
+    </div>
+    <div class="panel-content">
+        <input type="checkbox">漂洋过海来看你<br>
+        <input type="checkbox">一眼万年<br>
+        <input type="checkbox">后来<br>
+        <input type="checkbox">没那么简单<br>
+        <input type="checkbox">如果你要离去<br>
+        <input type="checkbox">恋恋风尘<br>
+        <input type="checkbox">南山南<br>
+        <input type="checkbox">涛声依旧<br>
+        <input type="checkbox">可惜不是你<br>
+    </div>
+    <div class="panel-footer">
+        <hr>
+        <button id="all_select">全选</button>
+        <button id="cancel_select">取消选中</button>
+        <button id="reverse_select">反选</button>
+    </div>
+</div>
+
+<script>
+    /// 获取所有的复选框
+    var allItem = document.getElementsByTagName('input');
+    var all_select_btn = document.getElementById('all_select');
+    var cancel_select = document.getElementById('cancel_select');
+    var reverse_select = document.getElementById('reverse_select');
+
+    /// 全选
+    all_select_btn.onclick = function () {
+        for (var i = 0; i < allItem.length; i++) {
+            allItem[i].checked = true;
+        }
+    }
+
+    cancel_select.onclick = function () {
+        for (var i = 0; i < allItem.length; i++) {
+            allItem[i].checked = false;
+        }
+    }
+
+    reverse_select.onclick = function () {
+        for (var i = 0; i < allItem.length; i++) {
+            allItem[i].checked = allItem[i].checked ? false : true;
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -19,7 +19,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url("..//Img//03.jpg");
+            background-image: url("..//Img//skin01.jpg");
             background-position: center 0;
             background-repeat: no-repeat;
         }
@@ -30,29 +30,69 @@
             position: relative;
             z-index: 10;
         }
+
+        #skin-photo ul {
+            overflow: hidden;
+            width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, .05);
+        }
+
+        #skin-photo ul li {
+            cursor: pointer;
+            float: left;
+            height: 120px;
+            margin: 10px 0 10px 10px;
+        }
+
+        #skin-photo ul li img {
+            width: 180px;
+            height: 120px;
+        }
     </style>
 </head>
 <body>
 <div id="skin"></div>
 <div id="skin-photo">
     <ul>
-<!--        <li>-->
-<!--            <img src="..//Img//02.jpg">-->
-<!--        </li>-->
-<!--        <li>-->
-<!--            <img src="..//Img//02.jpg">-->
-<!--        </li>-->
-<!--        <li>-->
-<!--            <img src="..//Img//02.jpg">-->
-<!--        </li>-->
-<!--        <li>-->
-<!--            <img src="..//Img//02.jpg">-->
-<!--        </li>-->
-<!--        <li>-->
-<!--            <img src="..//Img//02.jpg">-->
-<!--        </li>-->
+        <li>
+            <img src="..//Img//skin01.jpg">
+        </li>
+
+        <li>
+            <img src="..//Img//skin02.jpg">
+        </li>
+
+        <li>
+            <img src="..//Img//skin03.jpg">
+        </li>
+
+        <li>
+            <img src="..//Img//skin04.jpg">
+        </li>
+
+        <li>
+            <img src="..//Img//skin05.jpg">
+        </li>
+
+        <li>
+            <img src="..//Img//skin06.jpg">
+        </li>
     </ul>
 </div>
+
+<script>
+    /// 获取对应的图片
+    var skin = document.getElementById('skin');
+    var allItem = document.getElementsByTagName('li');
+    for (var i = 0; i < allItem.length; i++) {
+        allItem[i].index = i + 1;
+        allItem[i].onclick = function () {
+            skin.style.backgroundImage = `url('..//Img//skin0${this.index}.jpg')`;
+            // console.log(this.index);
+        }
+    }
+</script>
 
 </body>
 </html>

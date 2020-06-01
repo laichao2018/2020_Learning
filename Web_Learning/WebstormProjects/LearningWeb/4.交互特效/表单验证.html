@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单验证</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #prompt {
+            font-size: 12px;
+            color: darkgray;
+        }
+
+        #score {
+            border: 1px solid darkgray;
+        }
+
+        .right {
+            background: url("..//Img//right.png") no-repeat 5px center;
+            background-size: 15px 15px;
+            padding-left: 20px;
+            color: lightgreen !important;
+        }
+
+        .false {
+            background: url("..//Img//false.png") no-repeat 5px center;
+            background-size: 15px 15px;
+            padding-left: 20px;
+            color: red !important;
+        }
+    </style>
+</head>
+<body>
+
+<div id="table_box">
+    <label for="score">您的成绩</label>
+    <input type="text" placeholder="请输入分数" id="score">
+    <span id="prompt">请输入您的成绩</span>
+</div>
+
+<script>
+    var input = document.getElementById('score');        ///输入框
+    input.onblur = function () {
+        // var value = this.value; /// 获取输入的内容
+        var num_value = parseFloat(this.value); /// 转换成数值类型
+        var prompt_check = document.getElementById('prompt');
+        // console.log(num_value);
+        if (isNaN(num_value)) {
+            /// 不是一个数值
+            prompt_check.innerHTML = "输入的成绩不正确";
+            prompt_check.setAttribute('class', 'false');
+            this.style.borderColor = 'red';
+        } else {
+            prompt_check.innerHTML = "完成输入";
+            prompt_check.setAttribute('class', 'right');
+            this.style.borderColor = 'lightgreen';
+        }
+    }
+    ///获取焦点，恢复输入框
+    input.onfocus = function () {
+        var prompt_check = document.getElementById('prompt');
+        prompt_check.innerHTML = '请输入您的成绩';
+        prompt_check.setAttribute('class', ' ');
+        input.style.borderColor = 'drakgray';
+        input.style.outline = 'none';
+        input.value = '';
+    }
+</script>
+</body>
+</html>

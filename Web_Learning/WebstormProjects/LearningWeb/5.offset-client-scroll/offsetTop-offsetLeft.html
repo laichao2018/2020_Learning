@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>offsetTop-offsetLeft</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #father {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background-color: red;
+            margin: 40px;
+        }
+
+        #son {
+            width: 200px;
+            height: 200px;
+            background-color: #0000FF;
+            border: 5px solid #000000;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="father">
+    <div id="son"></div>
+</div>
+<script>
+    /// offsetTop  === 当前元素上边框到offsetParent元素的上边框的距离
+    /// offsetTop  === 当前元素左边框到offsetParent元素的左边框的距离
+    var son = document.getElementById('son');
+    console.log(son.offsetParent);
+    console.log(son.offsetTop, son.offsetLeft);
+</script>
+</body>
+</html>

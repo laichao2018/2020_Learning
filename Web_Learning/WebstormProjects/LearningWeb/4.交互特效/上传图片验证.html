@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传图片验证</title>
+</head>
+<body>
+<label for="file">上传图片格式验证</label>
+<input type="file" id="file">
+
+<script>
+    /// onload 常用在 <body> 中，一旦完全加载所有内容（包括图像、脚本文件、CSS 文件等），就执行一段脚本。
+    window.onload = function () {
+        /// 获取标签
+        var file = document.getElementById('file');
+        /// 监听图片选择变化
+        file.onchange = function () {
+            // console.log(this.value);
+            var path = this.value;
+            var pos = path.lastIndexOf('.');
+            /// 截取文件路径的后缀名
+            var suffix = path.substr(pos);
+            /// 统一转小写
+            var lower_suffix = suffix.toLowerCase();
+            console.log(lower_suffix);
+            if (lower_suffix === '.jpg' || lower_suffix === ',png') {
+                alert('OK');
+            } else {
+                alert('ERROR');
+            }
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>长图滚动</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        #box {
+            width: 585px;
+            height: 400px;
+            margin: 100px auto;
+            border: 1px solid #ff6700;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #box img {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        #box span {
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            left: 0px;
+            cursor: pointer;
+        }
+
+        #box #top {
+            top: 0px;
+        }
+
+        #box #bottom {
+            bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <img src="..//Img//long_pic.jpeg" alt="">
+    <span id="top"></span>
+    <span id="bottom"></span>
+</div>
+<script>
+    var div_top = document.getElementById('top');
+    var div_bottom = document.getElementById('bottom');
+    var box = document.getElementById('box');
+    var images = document.getElementsByTagName('img')[0];
+
+    var num = 0, timer = null;
+    div_bottom.onmouseover = function () {
+        clearInterval(timer);   /// 防止速度越来越快
+        /// 图片往上滚动
+        timer = setInterval(function () {
+            num -= 10;
+            if (num >= (-1181 + 400)) { //1181-400盒子高度
+                images.style.top = num + 'px';
+            } else {
+                clearInterval(timer);
+            }
+        }, 50)
+    }
+
+    div_top.onmouseover = function () {
+        clearInterval(timer);   /// 防止速度越来越快
+        /// 图片往上滚动
+        timer = setInterval(function () {
+            num += 10;
+            if (num <= 0) { //1181-400盒子高度
+                images.style.top = num + 'px';
+            } else {
+                clearInterval(timer);
+            }
+        }, 50)
+    }
+
+    box.onmouseout = function () {  /// 停止滚动
+        clearInterval(timer);
+    }
+
+</script>
+</body>
+</html>

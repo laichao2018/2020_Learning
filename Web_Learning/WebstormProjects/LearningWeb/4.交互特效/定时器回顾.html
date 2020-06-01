@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器回顾</title>
+</head>
+<body>
+<button id="start">开启</button>
+<button id="stop">结束</button>
+<script>
+    var start = document.getElementById('start');
+    var end = document.getElementById('stop');
+    var num = 0;
+    var timer = null;
+    start.onclick = function () {
+        clearInterval(timer);   /// 启动的时候先关闭定时器，防止用户频繁性的开启定时器
+        timer = setInterval(function () {
+            num++;
+            console.log(num);
+        }, 1000);
+    }
+
+    end.onclick = function () {
+        clearInterval(timer);
+    }
+</script>
+</body>
+</html>
