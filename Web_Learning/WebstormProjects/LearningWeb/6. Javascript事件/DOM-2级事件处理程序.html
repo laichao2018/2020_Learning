@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM-2级事件处理程序</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    var box = document.getElementById('box');
+    // /// 可以同时进行多个事件，不发生覆盖
+    // setTimeout(function () {
+    //     box.addEventListener('click', function () {  /// false：事件冒泡
+    //         box.innerHTML += '1';
+    //     }, false);
+    // }, 100);
+    // // box.addEventListener('click', function () {
+    // //     box.innerHTML += '2';
+    // // }, false);
+    //
+    // box.addEventListener('click', function () {
+    //     test(111);
+    // }, false);
+    //
+    // function test(x) {
+    //     alert(x);
+    // }
+
+    /// 移除事件的方式
+    function Event() {
+        this.innerHTML += '1';
+    }
+
+    box.addEventListener('click', Event, false);
+    setTimeout(function () {
+        box.removeEventListener('click', Event, false);
+    }, 2000);   //// 两秒后移除事件，点击无效
+
+</script>
+</body>
+</html>

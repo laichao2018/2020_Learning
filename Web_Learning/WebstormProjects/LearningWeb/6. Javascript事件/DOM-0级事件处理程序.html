@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM-0级事件处理程序</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    var box = document.getElementById('box');
+    box.onclick = function () {
+        box.innerHTML += '1';
+    }
+    // box.onclick = null; ///删除事件处理程序
+
+    /// 有事件覆盖想象
+    box.onclick = function () {
+        box.innerHTML += '2';
+    }
+</script>
+</body>
+</html>

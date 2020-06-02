@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件代理(委托)</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        ul li {
+            float: left;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            color: #ffffff;
+            background-color: #000000;
+            margin: 0px 10px;
+        }
+    </style>
+</head>
+<body>
+<ul id="box">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+<script>
+    window.onload = function () {
+        // /// 常规方法，不能触发未来事件
+        // var list = document.getElementsByTagName('li');
+        // for (var i = 0; i < list.length; i++) {
+        //     list[i].onmouseover = function () {
+        //         this.style.backgroundColor = 'blue';
+        //     }
+        //     list[i].onmouseout = function () {
+        //         this.style.backgroundColor = 'black';
+        //     }
+        // }
+
+        /// 事件代理，实际目标对象
+        /// 可以给未来元素绑定事件
+        var box = document.getElementById('box');
+        box.onmouseover = function (e) {
+            e = e || window.event;
+            var target = e.target || e.srcElement;
+            target.style.backgroundColor = 'blue';
+        }
+        box.onmouseout = function (e) {
+            e = e || window.event;
+            var target = e.target || e.srcElement;
+            target.style.backgroundColor = 'black';
+        }
+
+        /// 模拟未来事件
+        setTimeout(function () {
+            var item = document.createElement('li');
+            item.innerHTML = '6';
+            box.appendChild(item);
+        }, 2000);
+    }
+</script>
+</body>
+</html>

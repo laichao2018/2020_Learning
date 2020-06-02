@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取事件对象</title>
+    <style>
+        #box {
+            width: 300px;
+            height: 200px;
+            background-color: #ff6700;
+        }
+    </style>
+</head>
+<body>
+<!--取消默认事件-->
+<!--<a href="javascript:void(0);">已经取消了默认事件</a>-->
+<div id="box"></div>
+<script>
+    /// 获取事件对象
+    /// 事件目标
+    /// 事件代理
+    /// 事件冒泡
+    /// 事件流阶段 eventPhase
+    /// 取消默认事件
+
+    //// 都要考虑兼容性
+    window.onload = function () {
+        var box = document.getElementById('box');
+        // box.onclick = function (x) {
+        //     console.log(x);     ///event对象是事件处理程序的第一个参数，ie8为undefined
+        //     this.innerHTML = x;
+        // }
+
+        // /// 也可以直接使用event对象
+        // box.onclick = function () {
+        //     this.innerHTML = event;     /// 但低版本是firefox不支持
+        // }
+
+        /// 兼容的写法
+        box.onclick = function (e) {
+            e = e || window.event;
+            this.innerHTML = e;
+        }
+    }
+</script>
+</body>
+</html>

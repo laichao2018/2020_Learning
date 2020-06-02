@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件目标</title>
+    <style>
+        #box {
+            width: 300px;
+            height: 300px;
+            font-size: 30px;
+            background-color: #ff6700;
+            margin: 50px 10px;
+        }
+    </style>
+</head>
+<body>
+<!--<div id="box"></div>-->
+<ul id="box">
+    <li class="item">1</li>
+    <li class="item">2</li>
+    <li class="item">3</li>
+</ul>
+<script>
+    /// currentTarget   target和srcElement
+    var box = document.getElementById('box');
+    box.onclick = function (e) {
+        e = e || window.event;  // 兼容性
+        // console.log(e);
+        var items = document.getElementsByTagName('li');
+        items[0].innerHTML = e.currentTarget;   /// 返回事件所在的节点(box)，与this一致
+        items[1].innerHTML = e.srcElement;
+        items[2].innerHTML = e.target;  /// 返回事件的实际点击目标
+    }
+
+</script>
+</body>
+</html>

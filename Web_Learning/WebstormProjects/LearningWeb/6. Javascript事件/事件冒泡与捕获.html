@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件冒泡与捕获</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    var box = document.getElementById('box');
+
+    /// 事件冒泡
+    // box.onclick = function () {
+    //     box.innerHTML += "div\n";
+    // }
+    // document.body.onclick = function () {
+    //     box.innerHTML += "body\n";
+    // }
+    // document.documentElement.onclick = function () {
+    //     box.innerHTML += "documentElement\n";
+    // }
+    // document.onclick = function () {
+    //     box.innerHTML += "document\n";
+    // }
+    // window.onclick = function () {
+    //     box.innerHTML += "window\n";
+    // }
+
+    /// 添加事件捕获
+    box.addEventListener('click', function () {
+    box.innerHTML += "div\n";
+    }, true);   /// false的话表示事件冒泡
+    document.body.addEventListener('click', function () {
+        box.innerHTML += "body\n";
+    }, true);   /// false的话表示事件冒泡
+    document.documentElement.addEventListener('click', function () {
+        box.innerHTML += "documentElement\n";
+    }, true);   /// false的话表示事件冒泡
+    document.addEventListener('click', function () {
+        box.innerHTML += "document\n";
+    }, true);   /// false的话表示事件冒泡
+    window.addEventListener('click', function () {
+        box.innerHTML += "window\n";
+    }, true);   /// false的话表示事件冒泡
+
+    /// 事件流：事件捕获阶段，处于目标阶段，事件冒泡阶段
+
+</script>
+</body>
+</html>
