@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淘宝放大镜案例</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #box {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #dddddd;
+            position: relative;
+            margin: 50px;
+        }
+
+        #small_box {
+            width: 500px;
+            height: 500px;
+            position: relative;
+        }
+
+        #small_box #mask {
+            position: absolute;
+            width: 210px;
+            height: 210px;
+            background: url("..//Img//dot.png") repeat;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        #big_box {
+            position: absolute;
+            left: 510px;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #dddddd;
+            overflow: hidden;
+            display: none;
+        }
+
+        #big_box img {
+            position: absolute;
+            z-index: 5;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="small_box">
+        <img src="..//Img//01.jpg" alt="">
+        <span id="mask">
+
+        </span>
+    </div>
+    <div id="big_box">
+        <img src="..//Img//02.jpg">
+    </div>
+</div>
+<script>
+    window.onload = function () {
+        var box = document.getElementById('box');
+        var small_box = document.getElementById('small_box');
+        // var big_box = small_box.children[0];
+        var big_box = document.getElementById('big_box');
+        var small_img = small_box.children[0];
+        var mask = small_box.children[1];
+        var big_img = big_box.children[0];
+
+        //// 监听鼠标移动
+        small_box.onmouseover = function () {
+            //// 显示mask和大盒子
+            mask.style.display = 'block';
+            big_box.style.display = 'block';
+            //// 监听鼠标移动
+            small_box.onmousemove = function (e) {
+                e = e || window.event;
+                /// 求出小盒子移动的水平垂直距离
+                var move_x = e.clientX - small_box.offsetLeft - box.offsetLeft - mask.offsetLeft * 0.5;
+                var move_y = e.clientY - small_box.offsetTop - box.offsetTop - mask.offsetHeight * 0.5;
+                /// 边界处理
+                if (move_x < 0) {
+                    move_x = 0;
+                } else if (move_x >= small_box.offsetWidth - mask.offsetWidth) {
+                    move_x = small_box.offsetWidth - mask.offsetWidth;
+                }
+                if (move_y < 0) {
+                    move_y = 0;
+                } else if (move_y >= small_box.offsetHeight - mask.offsetHeight) {
+                    move_y = small_box.offsetHeight - mask.offsetHeight;
+                }
+                mask.style.left = move_x + 'px';
+                mask.style.top = move_y + 'px';
+
+                /// 变化大图
+                /// moveX / 大图移动距离（？？？）=（small_box宽度 - mask宽度）/（big_img宽度 - big_box宽度）
+                var x = move_x / (small_box.offsetWidth - mask.offsetWidth);
+                var y = move_y / (big_img.offsetWidth - big_box.offsetWidth);
+
+                big_img.style.left = -x * (big_img.offsetWidth - big_box.offsetWidth) + 'px';
+                big_img.style.top = -y * (big_img.offsetHeight - big_box.offsetHeight) + 'px';
+            }
+        }
+        small_box.onmouseout = function () {
+            mask.style.display = 'none';
+            big_box.style.display = 'none';
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>取消默认事件</title>
+</head>
+<body>
+<a href="#" id="apeland">小猿圈</a>
+<script>
+    var apeland = document.getElementById('apeland');
+    apeland.onclick = function (e) {
+        e = e || window.event;
+        //// 阻止默认事件
+        if (e.preventDefault) {
+            e.preventDefault();     /// 兼容性问题
+        } else {
+            e.returnValue = false;
+        }
+    }
+</script>
+</body>
+</html>

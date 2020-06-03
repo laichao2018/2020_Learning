@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件对象中的坐标位置</title>
+</head>
+<body>
+<div id="box" style="width: 500px;height: 500px;background-color: red"></div>
+<script>
+    var box = document.getElementById('box');
+    box.onmousemove = function (e) {
+        e = e || window.event;
+        console.log(e);
+    }
+</script>
+</body>
+</html>

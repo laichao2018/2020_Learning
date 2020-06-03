@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件冒泡的用法</title>
+</head>
+<body>
+<button id="btn" style="height: 300px;width: 200px">按钮</button>
+<input type="text" id="test">
+<script>
+    /// 取消冒泡事件
+    /// bubbles cancelBubble stopPropagation() stopImmediatePropagation()
+    /// bubbles返回布尔值，是否会冒泡，大部分事件都会冒泡，但是focus blur scroll不会冒泡
+    var btn = document.getElementById('btn');
+    var test = document.getElementById('test');
+
+    btn.onclick = function (e) {    /// ie8浏览器不支持
+        e = e || window.event;
+        console.log(e.bubbles);
+    }
+    test.onfocus = function (e) {
+        e = e || window.event;
+        console.log(e.bubbles);
+    }
+
+    /// 取消事件的进一步冒泡
+    btn.onclick = function (e) {
+        e = e || window.event;
+        e.stopPropagation();    /// 阻止冒泡传播
+        this.innerHTML += '1';
+    }
+    document.body.onclick = function (e) {
+        e = e || window.event;
+        alert(e);
+    }
+
+    /// 也要阻止同一事件的其他监听函数的执行
+    btn.addEventListener('click', function (e) {
+        e = e || window.event;
+        e.stopImmediatePropagation();
+        this.innerHTML += '1';
+    }, false);
+    btn.addEventListener('click', function (e) {
+        e = e || window.event;
+        this.style.backgroundColor = 'red';
+    }, false);
+    document.body.onclick = function (e) {
+        e = e || window.event;
+        console.log('body click');
+    }
+
+    /// 阻止冒泡
+    btn.onclick = function (e) {
+        e = e || window.event;
+        e.cancelBubble = true;
+        console.log(e.bubbles);
+    }
+    document.body.onclick = function (e) {
+        e = e || window.event;
+        console.log('body click');
+    }
+
+</script>
+</body>
+</html>
