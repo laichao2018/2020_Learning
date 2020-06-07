@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取样式属性</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border: 1px solid #000000;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    window.onload = function () {
+        var box = document.getElementById('box');
+        move(box);
+
+        function move(obj) {
+            setInterval(function () {
+                // console.log(obj.offsetWidth);
+                // obj.style.width = parseInt(obj.style.width) - 1 + 'px';/// 获取行内样式，不推荐
+                // console.log(getStyle(obj,'width'));
+                obj.style.width = parseInt(getStyle(obj, 'width')) - 1 + 'px';
+            }, 30);
+        }
+
+        //// 获取样式宽度
+        function getStyle(obj, attr) {
+            if (obj.currentStyle) {
+                return obj.currentStyle[attr];  /// 兼容IE
+            } else {
+                /// 主流浏览器
+                return getComputedStyle(obj, null)[attr];
+            }
+        }
+    }
+</script>
+</body>
+</html>

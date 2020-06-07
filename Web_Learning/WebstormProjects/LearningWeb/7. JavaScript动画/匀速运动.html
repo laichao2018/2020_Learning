@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>匀速运动</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #btn {
+            width: 80px;
+            height: 40px;
+        }
+
+        #box {
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">运动</button>
+<div id="box"></div>
+<script>
+    var btn = document.getElementById('btn');
+    var box = document.getElementById('box');
+    // var num = 0;
+    var timer = null;
+    btn.onclick = function () {
+        clearInterval(timer);   /// 防止定时器累加
+        timer = setInterval(function () {
+            // num++;
+            // box.style.marginLeft = num + 'px';
+            // box.style.marginTop = num + 'px';
+            if (box.offsetLeft === 1000) {
+                clearInterval(timer);
+                // return;
+            } else {
+                box.style.marginLeft = box.offsetLeft + 10 + 'px'; ///暂时没有边界，且点击增加速度
+            }
+        }, 30);
+    }
+</script>
+</body>
+</html>

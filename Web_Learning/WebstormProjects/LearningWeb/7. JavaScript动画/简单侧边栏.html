@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单侧边栏</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: relative;
+            left: -200px;
+        }
+
+        #box span {
+            position: absolute;
+            width: 40px;
+            height: 60px;
+            color: #ffffff;
+            background-color: #000000;
+            right: -40px;
+            top: 50%;
+            margin-top: -30px;
+            line-height: 60px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <span>拉开</span>
+</div>
+<script>
+    window.onload = function () {
+        // var box = document.getElementById('box');
+        // box.onmouseover = function () {
+        //     this.style.left = 0 + 'px';
+        // }
+        // box.onmouseout = function () {
+        //     this.style.left = -200 + 'px';
+        // }
+
+        // //// 匀速拉出
+        // var box = document.getElementById('box');
+        // var timer = null;
+        // box.onmouseover = function () {
+        //     /// 首先关闭定时器
+        //     clearInterval(timer);
+        //     timer = setInterval(function () {
+        //         if (box.offsetLeft === 0) {
+        //             clearInterval(timer);
+        //         } else {
+        //             box.style.left = box.offsetLeft + 5 + 'px';
+        //         }
+        //     }, 30);
+        // }
+        // box.onmouseout = function () {
+        //     clearInterval(timer);
+        //     timer = setInterval(function () {
+        //         if (box.offsetLeft === -200) {
+        //             clearInterval(timer);
+        //         } else {
+        //             box.style.left = box.offsetLeft - 5 + 'px';
+        //         }
+        //     }, 30);
+        // }
+
+        /// 代码封装
+        var box = document.getElementById('box');
+        var timer = null, speed = 0;
+        box.onmouseover = function () {
+            startAnimation(this, 0);
+        }
+        box.onmouseout = function () {
+            startAnimation(this, -200);
+        }
+
+        function startAnimation(obj, end) {
+            clearInterval(timer);
+            speed = end > obj.offsetLeft ? 5 : -5;
+            timer = setInterval(function () {
+                if (obj.offsetLeft === end) {
+                    clearInterval(timer);
+                } else {
+                    obj.style.left = obj.offsetLeft + speed + 'px';
+                }
+            }, 30);
+        }
+    }
+</script>
+</body>
+</html>

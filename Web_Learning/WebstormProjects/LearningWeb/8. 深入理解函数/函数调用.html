@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数调用</title>
+    <style>
+        #box {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    // /// 构造函数调用模式
+    // var obj = {a: 5};
+    //
+    // function fn() {
+    //     this.a = 1;
+    //     return obj;
+    // }
+    //
+    // var obj = new fn();
+    // console.log(obj);   /// obj对象
+    // var box = document.getElementById('box');
+    // box.innerHTML += obj;
+
+    // /// 间接调用
+    // var obj = {
+    //     a: 10
+    // };
+    //
+    // function sum(x, y) {
+    //     console.log(this);
+    //     return x + y + this.a;
+    // }
+    //
+    // // console.log(sum());      ///没有传入obj对象
+    // // console.log(sum.call(obj, 1, 2));    /// 改变了this的指向，指向了obj
+    // // console.log(sum.apply(obj, 1, 2));
+    // console.log(sum('1', 2, 3));     /// 数字加NaN等于NaN
+
+
+    /// ================================================
+    /// ======               函数参数              ======
+    /// ================================================
+
+    // //// 实参比形参个数多的时候，考虑使用argument
+    // function add() {
+    //     console.log(arguments); /// argument不是真正的数组，是类数组，可以通过中括号的方式访问每一个元素
+    //     console.log(arguments[0], arguments[1]);
+    //     console.log(arguments.length);  /// 为传入参数的个数
+    // }
+    //
+    // add(1, 2, 3, 4, 5);
+    //
+    // /// 查看形参的个数
+    // console.dir(add.length);
+
+    /// ================================================
+    /// ======               函数重载              ======
+    /// ================================================
+
+    /// js没有函数重载现象
+
+</script>
+</body>
+</html>

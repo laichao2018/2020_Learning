@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>缓动运动</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: relative;
+            left: -200px;
+        }
+
+        #box span {
+            position: absolute;
+            width: 40px;
+            height: 60px;
+            color: #ffffff;
+            background-color: #000000;
+            right: -40px;
+            top: 50%;
+            margin-top: -30px;
+            line-height: 60px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <span>拉开</span>
+</div>
+<script>
+    //// 缓动动画公式+++++(没写完)
+    // window.onload = function () {
+    //     var box = document.getElementById('box');
+    //     var timer = null;
+    //     var end0 = 0, end2 = -200;
+    //     var speed = 0;
+    //     box.onmouseover = function () {
+    //         clearInterval(timer);
+    //         timer = setInterval(function () {
+    //             speed = (end0 - box.offsetLeft) / 20;
+    //             // console.log(speed);
+    //             //// 处理边界问题
+    //             if (box.offsetLeft === end2) {
+    //                 clearInterval(timer);
+    //             } else {
+    //                 box.style.left = box.offsetLeft + speed + 'px';
+    //             }
+    //         }, 30);
+    //     }
+    // }
+</script>
+</body>
+</html>

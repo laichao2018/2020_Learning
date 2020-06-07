@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>call_apply</title>
+</head>
+<body>
+<script>
+    // /// 找出数组的最大值
+    // var max = Math.max(1, 3, 1, 23, 34);
+    // var arr = [2, 32, 56, 7, 21];
+    // var max_num = Math.max.apply(null, arr);
+    // console.log(max_num);
+
+    /// ================================================
+    /// ======               用于继承             ======
+    /// ================================================
+    function Animal(name, age) {
+        this.name = name;
+        this.age = age;
+        this.sayAge = function () {
+            console.log(this.age);
+        }
+    }
+
+    function Cat() {
+        /// 继承了Animal对象
+        Animal.call(this);  /// 相当于把this指向了31行的c实例对象
+    }
+
+    var c = new Cat();
+
+    function Dog() {
+        Animal.apply(this, arguments);
+    }
+
+    var d = new Dog('阿旺', 18);
+    console.log(d);
+</script>
+</body>
+</html>
