@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>addClassAttr</title>
+    <style>
+        /*.important {*/
+        /*    font-weight: bold;*/
+        /*    font-size: xx-large;*/
+        /*}*/
+
+        /*.blue {*/
+        /*    color: blue;*/
+        /*}*/
+
+        .ancestors *
+        {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+    <script src="..//jquery-3.5.1.js"></script>
+</head>
+<body>
+
+<!--<h1>标题 1</h1>-->
+<!--<h2>标题 2</h2>-->
+<!--<p>这是一个段落。</p>-->
+<!--<p>这是另一个段落。</p>-->
+<!--<div>这是非常重要的文本！</div>-->
+<!--<br>-->
+<!--<button>向元素添加类</button>-->
+
+<!--<div id="div1" style="height:100px;width:300px;padding:10px;margin:3px;border:1px solid blue;background-color:lightblue;"></div>-->
+<!--<br>-->
+<!--<button>调整 div 的尺寸</button>-->
+
+<body class="ancestors"> body (曾曾祖父)
+<div style="width:500px;">div (曾祖父)
+    <ul>ul (祖父)
+        <li>li (直接父)
+            <span>span</span>
+        </li>
+    </ul>
+</div>
+</body>
+<script>
+    // $(function () {
+    //     $("button").click(function () {
+    //         $("h1,h2,p").addClass("blue");
+    //         $("div").toggleClass("important blue");
+    //     })
+    // })
+
+    // $(document).ready(function(){
+    //     $("button").click(function(){
+    //         $("#div1").width(320).height(320);
+    //     });
+    // });
+
+    // $(function () {
+    //     // $("span").parentsUntil("div").css({"color": "red", "font-size": "40px"}); /// 没有p元素的话会一直往上找
+    //     // $("div").find("*").css({"color":"red","border":"2px solid red"});   /// 找出所有的孩子节点
+    // })
+</script>
+</body>
+</html>

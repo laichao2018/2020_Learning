@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>监听watch</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <input type="text" v-model="msg">
+        <h3>{{msg}}</h3>
+        <br /><br /><br />
+
+        <h3>{{stus[0].name}}</h3>
+        <button @click='stus[0].name= "Tom"'>Change</button>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: "#box",
+            data: {
+                msg: '',
+                stus: [{ name: "Jack" }]
+            },
+            watch: {
+                /// 普通监听
+                'msg': function (newValue, oldValue) {
+                    console.log(newValue, oldValue);
+                },
+                /// 深度监听(用于数组、对象等复杂数据类型)
+                'stus': {
+                    deep: 'true',
+                    handler: function (newValue, oldValue) {
+                        console.log(newValue, oldValue);
+                        console.log(newValue[0].name);
+                    }
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>

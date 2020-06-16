@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多个库之间的冲突问题</title>
+</head>
+<body>
+<div id="box">Hello World.</div>
+<script src="index.js"></script>
+<script src="jquery-3.5.1.js"></script>
+<script>
+    // $(function () {
+    //     $('#box').css('color', 'red');
+    //     $('#box').css('font-size', '30px');
+    // })
+
+    jQuery.noConflict();    /// 解决同名命名冲突问题
+    console.log($); ///$使用权交给原生js
+    (function ($) { ///参数别名
+        $('#box').css('color', 'red');
+    })(jQuery); //// 使用立即执行函数将jQuery传入
+</script>
+</body>
+</html>

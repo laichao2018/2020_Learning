@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML</title>
+    <script src="..//jquery-3.5.1.js"></script>
+</head>
+<body>
+<!--<p id="test1">这是段落。</p>-->
+<!--<p id="test2">这是另一个段落。</p>-->
+<!--<p>Input field: <input type="text" id="test3" value="Mickey Mouse"></p>-->
+<!--<button id="btn1">设置文本</button>-->
+<!--<button id="btn2">设置 HTML</button>-->
+<!--<button id="btn3">设置值</button>-->
+
+<!--<p id="test1">这是<b>粗体</b>文本。</p>-->
+<!--<p id="test2">这是另一段<b>粗体</b>文本。</p>-->
+<!--<button id="btn1">显示旧/新文本</button>-->
+<!--<button id="btn2">显示旧/新 HTML</button>-->
+
+<p><a href="http://www.w3school.com.cn" id="w3s">W3School.com.cn</a></p>
+<button>改变 href 值</button>
+<script>
+    // $(function () {
+    //     $("#btn1").click(function () {
+    //         console.log($("#test1").html());
+    //         $("#test1").html("<b>Hello World</b>");
+    //     });
+    //     $("#btn3").click(function () {
+    //         $("#test3").val("Dolly Duck");
+    //     })
+    // })
+
+    // $(document).ready(function () {
+    // $("#btn1").click(function () {
+    //     $("#test1").text(function (i,origText) { /// 被选元素当前的下标i
+    //         return "Old text: " + origText + " New text: Hello world! (index: " + i + ")";
+    //     })
+    // })
+    // })
+
+    // $(function () {
+    //     $("button").click(function () {
+    //         $("#w3s").attr({
+    //             "href": "https://www.baidu.com",
+    //             "title": "w3chool"
+    //             // "text":"百度一下，你就知道"       /// 将会新增属性标签text
+    //         });
+    //         $("#w3s").text("百度一下，你就知道");
+    //     })
+    // })
+
+    $(function () {
+        var text01 = "<b>I </b>";   // 以 HTML 创建元素
+        var text02 = $("<i></i>").text("love ");        // 通过 jQuery 创建元素
+        var text03 = document.createElement("big");     // 通过 DOM 创建元素
+        text03.innerHTML = "jQuery";
+        $("#img")?.after(text01, text02, text03);   // 在 img 之后插入新元素
+    })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

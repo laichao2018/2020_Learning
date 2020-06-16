@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>双向数据绑定</title>
+    <script src="vue.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{msg}}</h1>
+        <!-- 数据到视图，视图再到数据 -->
+        <input type="text" v-model="msg">
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: "",
+            },
+            methods: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

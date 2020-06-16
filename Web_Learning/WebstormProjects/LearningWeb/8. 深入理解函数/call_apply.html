@@ -15,27 +15,43 @@
     /// ================================================
     /// ======               用于继承             ======
     /// ================================================
-    function Animal(name, age) {
-        this.name = name;
-        this.age = age;
-        this.sayAge = function () {
-            console.log(this.age);
+    // function Animal(name, age) {
+    //     this.name = name;
+    //     this.age = age;
+    //     this.sayAge = function () {
+    //         console.log(this.age);
+    //     }
+    // }
+    //
+    // function Cat() {
+    //     /// 继承了Animal对象
+    //     Animal.call(this);  /// 相当于把this指向了31行的c实例对象
+    // }
+    //
+    // var c = new Cat();
+    //
+    // function Dog() {
+    //     Animal.apply(this, arguments);
+    // }
+    //
+    // var d = new Dog('阿旺', 18);
+    // console.log(d);
+
+    let obj1 = {
+        a: 222
+    };
+
+    let obj2 = {
+        a: 111,
+        fn: function () {
+            alert(this.a);
         }
     }
 
-    function Cat() {
-        /// 继承了Animal对象
-        Animal.call(this);  /// 相当于把this指向了31行的c实例对象
-    }
+    obj2.fn.call(obj1); //// call的传入参数不固定
+    
 
-    var c = new Cat();
 
-    function Dog() {
-        Animal.apply(this, arguments);
-    }
-
-    var d = new Dog('阿旺', 18);
-    console.log(d);
 </script>
 </body>
 </html>

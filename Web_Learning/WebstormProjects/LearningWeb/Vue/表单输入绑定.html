@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>表单输入绑定</title>
+    <script src="vue.js""></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- <div id=" app">-->
+        <!-- 复选框单选 
+    <label for="checkbox">{{checked}}</label>
+    <input type="checkbox" id="checkbox" v-model='checked'>
+    </div> -->
+
+    
+    <!-- 复选框数组 -->
+    <!-- <div class="box">
+        <label for="a">aa</label>
+        <input type="checkbox" id="a" value="aa" v-model='checkedObjs'>
+        <label for="b">bb</label>
+        <input type="checkbox" id="b" value="bb" v-model='checkedObjs'>
+        <label for="c">cc</label>
+        <input type="checkbox" id="c" value="cc" v-model='checkedObjs'>
+        <label for="d">dd</label>
+        <input type="checkbox" id="d" value="dd" v-model='checkedObjs'>
+        <br/>
+        <span>{{checkedObjs}}</span>
+    </div> -->
+
+   <!-- <div id="sel">
+    <select v-model="selectObjs">
+        <option v-for="opt in options" :value="opt.value">
+            {{opt.text}}
+        </option>
+    </select>
+    <br/>
+    <span>{{selectObjs}}</span>
+   </div> -->
+
+   <div id="input">
+       <label for="input_text">{{nums}}</label>
+       <!-- v-model的参数number会将文本parseFloat()执行一遍 -->
+       <!-- v-model的参数lazy输入完点击空白处才会更新值 -->
+       <!-- v-model的参数trim自动清除首尾的空白字符 -->
+       <input type="text" id="input_text" v-model.trim="nums">
+   </div>
+    <script>
+        // var vm = new Vue({
+        //     el: '#app',
+        //     data: {
+        //         checked: false
+        //     },
+        //     methods: {
+
+        //     }
+        // })
+
+        // var vm = new Vue({
+        //     el: ".box",
+        //     data: {
+        //         checkedObjs: [],    /// 保存已经勾选的内容至数组
+        //     },
+        //     methods: {
+
+        //     }
+        // })
+
+        // var vm = new Vue({
+        //     el: "#sel",
+        //     data: {
+        //         selectObjs: 'A',
+        //         options: [
+        //             { text: "One", value: "A" },
+        //             { text: "Two", value: "B" },
+        //             { text: "Three", value: "C" }
+        //         ]
+        //     },
+        //     methods: {
+
+        //     }
+        // })
+
+        var vm = new Vue({
+            el: "#input",
+            data: {
+                nums: 0,
+            },
+            methods: {
+
+            }
+        })
+
+    </script>
+    </body>
+
+</html>

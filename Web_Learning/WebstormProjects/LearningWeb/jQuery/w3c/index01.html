@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="..//jquery-3.5.1.js"></script>
+    <style type="text/css">
+        div.panel, p.flip {
+            margin: 0px;
+            padding: 5px;
+            text-align: center;
+            background: #e5eecc;
+            border: solid 1px #c3c3c3;
+        }
+
+        div.panel {
+            height: 120px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!--<button type="button">切换</button>-->
+<!--<p>如果您点击我，我会消失。</p>-->
+<!--<p>点击我，我会消失。</p>-->
+<!--<p>也要点击我哦。</p>-->
+
+<!--<p>演示带有不同参数的 fadeIn() 方法。</p>-->
+<!--<button>点击这里，使三个矩形淡入</button>-->
+<!--<br><br>-->
+<!--<div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div>-->
+<!--<br>-->
+<!--<div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div>-->
+<!--<br>-->
+<!--<div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>-->
+
+<div class="panel">
+    <p>W3School - 领先的 Web 技术教程站点</p>
+    <p>在 W3School，你可以找到你所需要的所有网站建设教程。</p>
+</div>
+
+<p class="flip">请点击这里</p>
+
+<script>
+    // $(function () {
+    //     $('p').mouseover(function () {
+    //         $(this).css('font-size', '60px');
+    //         $(this).css('color', 'red');
+    //     })
+    //     $('p').mouseout(function () {
+    //         $(this).css({'font-size': '30px', 'background-color: red'});
+    //         $(this).css('color', 'black');
+    //     })
+    // })
+
+    // $(function () {
+    //     $('button').click(function () {
+    //         $('p').toggle(1000);
+    //     })
+    // })
+
+    // $(function () {
+    //     var flag = false;
+    //     $('button').click(function () {
+    //         if(!flag){
+    //             $('#div1').fadeIn();
+    //             $('#div2').fadeIn('fast');
+    //             $('#div3').fadeIn(3000);
+    //             flag = true;
+    //         }else{
+    //             $('#div1').fadeOut();
+    //             $('#div2').fadeOut('fast');
+    //             $('#div3').fadeOut(3000);
+    //             flag = false;
+    //         }
+    //     })
+    // })
+
+
+    // $(function () {
+    //     $('button').click(function () {
+    //         $('#div1').fadeToggle();
+    //         $('#div2').fadeToggle('slow');
+    //         $('#div3').fadeToggle('fast');
+    //     })
+    // })
+
+    $(document).ready(function () {
+        $(".flip").click(function () {
+            $(".panel").slideToggle("slow");
+        });
+    });
+</script>
+</body>
+</html>

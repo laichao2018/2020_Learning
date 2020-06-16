@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>VUE-DOM</title>
+    <script src="vue.js"></script>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+
+        }
+
+        .active {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <h1>{{ num }}</h1>-->
+        <!-- <button v-on:click="num+=1">+1</button> 
+        <button v-on:click="handleClick">+1</button> -->
+        <div class="box" :class="{active:isActive}">我会变色</div>
+        <!-- <button v-on:click="changeColor">啦啦啦</button> -->
+        <!-- 简写方式 -->
+        <button @click="changeColor">啦啦啦</button>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                num: 0,
+                isActive: false
+            },
+            methods: {
+                handleClick: function () {
+                    this.num += 1;
+                },
+                changeColor: function () {
+                    // if (this.isActive) {
+                    //     this.isActive = false;
+                    // } else {
+                    //     this.isActive = true;
+                    // }
+                    this.isActive = !this.isActive;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation</title>
+    <script src="..//jquery-3.5.1.js"></script>
+    <!--    <style>-->
+    <!--        #panel, #flip {-->
+    <!--            padding: 5px;-->
+    <!--            text-align: center;-->
+    <!--            background-color: #e5eecc;-->
+    <!--            border: 1px solid #c3c3c3;-->
+    <!--        }-->
+
+    <!--        #panel {-->
+    <!--            position: absolute;-->
+    <!--            padding: 50px;-->
+    <!--            display: none;-->
+    <!--        }-->
+    <!--    </style>-->
+</head>
+<body>
+<body>
+<!--<button>开始动画</button>-->
+<!--<p>默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。如需对位置进行操作，记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute。</p>-->
+<!--<div style="background:#98bf21;height:100px;width:100px;position:relative;"></div>-->
+
+<!--<button id="stop">停止滑动</button>-->
+<!--<div id="flip">点击这里，向下滑动面板</div>-->
+<!--<div id="panel">Hello world!</div>-->
+
+<p>This is a paragraph with little content.</p>
+<script>
+    // $(function () {
+    //     $('button').click(function () {
+    //         $('div').animate({left: '250px'});
+    //     })
+    // })
+
+    // $(function () {
+    //     $('#flip').click(function () {
+    //         $('#panel').slideDown(5000);
+    //     })
+    //     $('#stop').click(function () {
+    //         $('#panel').stop();
+    //     })
+    // })
+
+    // $(function () {
+    //     $("p").hide(1000, function () {
+    //         alert("The paragraph is now hidden");   /// 回调函数，在执行完hide之后执行
+    //     });
+    // })
+
+    $(function () {
+        $('p').click(function () {
+            $(this).css('color', 'red')
+                .slideUp(2000)
+                .slideDown(2000);
+                // .css('color', 'black');
+        })
+    })
+
+</script>
+</body>
+</html>
