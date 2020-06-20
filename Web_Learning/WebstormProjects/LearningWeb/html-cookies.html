@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html-cookies</title>
+</head>
+<body>
+<script>
+    /// cookies保存在浏览器中，具有生命周期
+    var date = new Date();
+    date.setDate(date.getDate() + 1); ///往后推一天
+    document.cookie = "age=24;expires=" + date.toGMTString() + ";";
+</script>
+</body>
+</html>

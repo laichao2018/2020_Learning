@@ -10,11 +10,31 @@
 		<div id="app">
 			<h>{{ message }}</h>
 		</div>
+		<div id="det">
+			<h1>site:{{site}}</h1>
+			<h1>url:{{url}}</h1>
+			<h1>{{details()}}</h1>
+		</div>
+
 		<script type="text/javascript">
 			var vm = new Vue({
 				el: "#app",
 				data: {
 					message: "Hello Vue."
+				}
+			})
+
+			var vm1 = new Vue({
+				el: "#det",
+				data: {
+					site: "百度一下，你就知道",
+					url: "https://www.baidu.com",
+					alexa: "10000"
+				},
+				methods: {
+					details: function() {
+						return this.site + "哈哈哈哈哈";
+					}
 				}
 			})
 		</script>

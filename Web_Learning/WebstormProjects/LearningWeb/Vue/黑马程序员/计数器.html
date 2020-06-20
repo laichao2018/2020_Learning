@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>计数器</title>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{
+				padding: 0rem;
+				margin: 0rem;
+			}
+			button{
+				width: 3.125rem;
+				height: 3.125rem;
+			}
+			span{
+				width: 3.75rem;
+				height: 3.75rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div class="input-num">
+				<button type="button" @click="sub">-</button>
+				<span>{{ count }}</span>
+				<button type="button" @click="add">+</button>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var vm=new Vue({
+				el:"#app",
+				data:{
+					count:0
+				},
+				methods:{
+					add:function(){
+						if(this.count<10){
+							this.count++;
+						}else{
+							alert("不可以加啦....");
+						}
+					},
+					sub:function(){
+						if(this.count>0){
+							this.count--;
+						}else{
+							alert("不可以减啦...");
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

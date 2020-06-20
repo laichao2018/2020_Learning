@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>v-html</title>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<h2 v-html="message"></h2>
+		</div>
+		<script type="text/javascript">
+			var vm=new Vue({
+				el:"#app",
+				data:{
+					message:"<a href='https://www.baidu.com'>百度一下，你就知道！</a>"
+				}
+			})
+		</script>
+	</body>
+</html>

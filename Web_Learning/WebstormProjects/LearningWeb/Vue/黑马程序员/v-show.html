@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>v-show</title>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<button type="button" @click="changeIsShow">显示/隐藏</button>
+			<br>
+			<img src="../../Img/01.jpg" v-show="isShow">
+		</div>
+		<script type="text/javascript">
+			var vm=new Vue({
+				el:"#app",
+				data:{
+					isShow:false
+				},
+				methods:{
+					changeIsShow:function(){
+						this.isShow=!this.isShow;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

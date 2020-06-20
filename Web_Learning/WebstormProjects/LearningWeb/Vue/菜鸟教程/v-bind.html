@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>v-bind，绑定属性</title>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.class {
+				background-color: #90EE90;
+				font-size: 1.875rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<label for="r1">Change Color</label>
+			<input type="checkbox" id="r1" v-model="use" />
+			<br><br>
+			<div v-bind:class="{'class':use}">
+				v-bind 指令
+			</div>
+		</div>
+		<div id="app2">
+			<pre>
+				<a v-bind:href="url">百度一下，你就知道</a>
+			</pre>
+		</div>
+		
+		<script type="text/javascript">
+			var vm = new Vue({
+				el: "#app",
+				data: {
+					use: false
+				}
+			});
+			var vm2=new	Vue({
+				el:"#app2",
+				data:{
+					url:"https://www.baidu.com"
+				}
+			})
+		</script>
+	</body>
+</html>

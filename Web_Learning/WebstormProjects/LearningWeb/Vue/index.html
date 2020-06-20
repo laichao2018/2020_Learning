@@ -1,88 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <title>index</title>
-    <script src="vue.js"></script>
-    <style>
-        .active {
-            color: red;
-        }
-    </style>
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<title>index</title>
+		<script src="vue.js"></script>
+		<style>
+			.active {
+				color: red;
+			}
+		</style>
+	</head>
 
-<body>
-    <!--<div id="app">-->
-    <!--    <h2>{{msg}}</h2>-->
-    <!--    <h2>{{ {id:1,name:2} }}</h2>    &lt;!&ndash; 空格不能少 &ndash;&gt;-->
-    <!--    &lt;!&ndash;    表达式&ndash;&gt;-->
-    <!--    <h2>{{ 1>2?"Real":"Error" }}</h2>-->
-    <!--    &lt;!&ndash;反转字符串&ndash;&gt;-->
-    <!--    <h2>{{ text.split('').reverse().join('') }}</h2>-->
-    <!--    <h2>{{ getContent() }}</h2>-->
-    <!--</div>-->
+	<body>
+		<!--<div id="app">-->
+		<!--    <h2>{{msg}}</h2>-->
+		<!--    <h2>{{ {id:1,name:2} }}</h2>    &lt;!&ndash; 空格不能少 &ndash;&gt;-->
+		<!--    &lt;!&ndash;    表达式&ndash;&gt;-->
+		<!--    <h2>{{ 1>2?"Real":"Error" }}</h2>-->
+		<!--    &lt;!&ndash;反转字符串&ndash;&gt;-->
+		<!--    <h2>{{ text.split('').reverse().join('') }}</h2>-->
+		<!--    <h2>{{ getContent() }}</h2>-->
+		<!--</div>-->
 
-    <!--<div id="app">-->
-    <!--    <div v-if="isShow">-->
-    <!--        显示-->
-    <!--    </div>-->
-    <!--    <div v-else>-->
-    <!--        隐藏-->
-    <!--    </div>-->
-    <!--    <h3 v-show="show">SHOW</h3>-->
-    <!--</div>-->
+		<!--<div id="app">-->
+		<!--    <div v-if="isShow">-->
+		<!--        显示-->
+		<!--    </div>-->
+		<!--    <div v-else>-->
+		<!--        隐藏-->
+		<!--    </div>-->
+		<!--    <h3 v-show="show">SHOW</h3>-->
+		<!--</div>-->
 
-    <div id="app">
-        <a v-bind:href="res.url" :title="res.title">{{res.name}}</a>
-        <img :src="imgSRC">
-        <!--    v-bind 与 :*** 功能一样,后者为简写  -->
-        <h2 :class="{active:isActive}">v-bind用法</h2>
-        <!--    绑定自定义属性-->
-        <h2 :aaa="res.name">hello world</h2>
-        <h2 :style='{color:isColor,fontSize: fontSize + "px"}'>hhhhh</h2>
-    </div>
-    <script>
-        // console.log(Vue);
-        /// 初始化
-        // var vueObj = new Vue({
-        //     el: '#app',
-        //     data: {
-        //         msg: "Hello Vue",
-        //         text: "hello",
-        //         msg2: "Content"
-        //     },
-        //     methods: {
-        //         getContent() {
-        //             return this.msg + " " + this.msg2;
-        //         }
-        //     }
-        // })
-        // console.log(vueObj);
+		<div id="app">
+			<a v-bind:href="res.url" :title="res.title">{{res.name}}</a>
+			<img :src="imgSRC">
+			<!--    v-bind 与 :*** 功能一样,后者为简写  -->
+			<h2 :class="{active:isActive}">v-bind用法</h2>
+			<!--    绑定自定义属性-->
+			<h2 :aaa="res.name">hello world</h2>
+		</div>
+		<script>
+			// console.log(Vue);
+			/// 初始化
+			// var vueObj = new Vue({
+			//     el: '#app',
+			//     data: {
+			//         msg: "Hello Vue",
+			//         text: "hello",
+			//         msg2: "Content"
+			//     },
+			//     methods: {
+			//         getContent() {
+			//             return this.msg + " " + this.msg2;
+			//         }
+			//     }
+			// })
+			// console.log(vueObj);
 
-        // new Vue({
-        //     el: "#app",
-        //     data: {
-        //         isShow: Math.random() > 0.5,
-        //         show: true
-        //     }
-        // })
+			// new Vue({
+			//     el: "#app",
+			//     data: {
+			//         isShow: Math.random() > 0.5,
+			//         show: true
+			//     }
+			// })
 
-        new Vue({
-            el: "#app",
-            data: {
-                res: {
-                    name: "百度",
-                    url: "https://www.baidu.com",
-                    title: "百度一下"
-                },
-                imgSRC: "..//Img//01.jpg",
-                isActive: true,
-                isColor: "green",
-                fontSize: "30"
-            }
-        })
-    </script>
-</body>
+			var vm = new Vue({
+				el: "#app",
+				data: {
+					res: {
+						name: "百度",
+						url: "https://www.baidu.com",
+						title: "百度一下"
+					},
+					imgSRC: "..//Img//01.jpg",
+					isActive: true,
+					isColor: "green",
+					fontSize: "30"
+				}
+			})
+		</script>
+	</body>
 
 </html>

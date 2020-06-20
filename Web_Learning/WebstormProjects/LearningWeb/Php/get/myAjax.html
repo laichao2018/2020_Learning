@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>调用封装的Ajax函数</title>
+    <script src="myAjax.js"></script>
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            var oBtn = document.getElementById("send");
+            oBtn.onclick = function () {
+                ajax("ajax-get.php", {
+                    "userName": "laichao",
+                    "userPwd": "12346"
+                }, 5000,
+                    function (xx) {
+                        alert(xx.responseText)
+                    },
+                    function () {
+                        alert("请求失败");
+                    })
+            }
+        }
+    </script>
+    <button id="send">发送请求</button>
+</body>
+
+</html>
