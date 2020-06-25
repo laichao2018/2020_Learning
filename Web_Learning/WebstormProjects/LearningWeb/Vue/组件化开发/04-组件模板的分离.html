@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>04-组件模板的分离</title>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<cpn></cpn>
+		</div>
+		
+		<!-- 模板抽离文本 -->
+<!-- 		<script type="text/x-template" id="cpn">
+			<div>
+				<h2>我是标题1</h2>
+				<p>===== 我是内容 =====</p>
+			</div>
+		</script> -->
+		
+		<template id="cpn">
+			<div>
+				<h2>我是标题1</h2>
+				<p>===== 我是内容 =====</p>
+			</div>
+		</template>
+
+		<script type="text/javascript">
+			const vm=new Vue({
+				el:"#app",
+				data:{
+					
+				},
+				template:"#cpn"
+			})
+		</script>
+	</body>
+</html>

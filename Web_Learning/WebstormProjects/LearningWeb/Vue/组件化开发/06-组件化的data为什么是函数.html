@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>06-组件化开发中的data为什么是函数</title>
+    <script src="..//vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <cpn></cpn> -->
+        <counter></counter>
+        <counter></counter>
+        <counter></counter>
+    </div>
+
+    <template id="temp">
+        <div>
+            <h1>{{ title }}</h1>
+            <p>{{ content }}</p>
+        </div>
+    </template>
+
+    <template id="count">
+        <div>
+            <!-- 计数器实例 -->
+            <h2>当前数值: {{ counter }}</h2>
+            <button @click="increment">+</button>
+            <button @click="decrement">-</button>
+        </div>
+    </template>
+
+    <script>
+        const obj = {
+            counter: 0
+        }
+
+        const vm = new Vue({
+            el: "#app",
+            data: {
+
+            },
+            components: {
+                'cpn': {
+                    template: "#temp",
+                    data() {
+                        return {    /// 返回函数，每次返回新对象，不共享一个值
+                            title: "我是标题",
+                            content: "我是内容"
+                        }
+                    }
+                },
+                'counter': {
+                    template: "#count",
+                    data() {
+                        return {
+                            counter: 0
+                        }
+                        
+                        // return obj; //// 这样写将共享一个counter，不建议
+                    },
+                    methods: {
+                        increment() {
+                            this.counter++;
+                        },
+                        decrement() {
+                            this.counter--;
+                        }
+                    },
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
