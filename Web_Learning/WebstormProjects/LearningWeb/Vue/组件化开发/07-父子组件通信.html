@@ -9,27 +9,59 @@
 
 <body>
     <div id="app">
-
+        <cpn v-bind:cmovies="movies" :cmessage="message"></cpn>
     </div>
 
-    <template>
+    <template id="cpn">
         <div>
-
+            <ul>
+                <li v-for="item in cmovies">{{item}}</li>
+            </ul>
+            <p>{{cmessage}}</p>
         </div>
     </template>
 
     <script>
+        /// 父传子：pros
+        const cpn = {
+            template: '#cpn',
+            data() {
+                return {}
+            },
+            /// 
+            // props: ['cmovies', 'cmessage'],
+            props: {
+                cmovies: {
+                    type: Array,
+                    required: true,
+                    // default: []     /// 旧版
+                    default() {
+                        return []   ////数组类型比较特殊
+                    }
+                },
+                cmessage: {
+                    type: String,
+                    required: true,
+                    default: "aaaaaaa"
+                }
+            },
+            methods: {
+
+            },
+        }
+
         const vm = new Vue({
             el: "#app",
             data: {
-
+                message: "Hello Vue",
+                movies: ['海王', '海贼王', '海尔兄弟']
             },
-            comments: {
-
+            components: {
+                'cpn': cpn
             }
         })
-
     </script>
+
 </body>
 
 </html>

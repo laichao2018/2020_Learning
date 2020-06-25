@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>09-子传父通信</title>
+		<script src="../vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<cpn @itemclick="cpnClick"></cpn>
+		</div>
+		
+		<template id="cpn">
+			<div>
+				<button type="button" v-for="item in cate" 
+				@click="btnClick(item)">{{item.name}}</button>
+			</div>
+		</template>
+		
+		<script>	
+		//// 子组件
+			const cpn={
+				template:"#cpn",
+				data(){
+					return {
+						cate:[
+							{id:'aaa',name:'热门推荐'},
+							{id:'bbb',name:'手机数码'},
+							{id:'ccc',name:'家电设备'},
+							{id:'ddd',name:'电脑办公'},
+						]
+					}
+				},
+				methods:{
+					btnClick(item){
+						//// 子组件发送事件
+						this.$emit('itemclick',item)
+					}
+				}
+			}
+		
+		//// 父组件
+			const vm=new Vue({
+				el:"#app",
+				data:{
+					message:"Hello Vue"
+				},
+				methods:{
+					cpnClick(item){
+						console.log('cpnClick');
+						console.log(item);
+					}
+				},
+				components:{
+					cpn
+				}
+			})
+			
+		</script>
+	</body>
+</html>

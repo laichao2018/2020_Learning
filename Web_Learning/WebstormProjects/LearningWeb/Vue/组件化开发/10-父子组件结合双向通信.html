@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>10-父子组件结合双向通信</title>
+		<script src="../vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<!-- <cpn :number1="num1" :number2="num2"></cpn> -->
+			<!-- 可以使用单标签 -->
+			<cpn :number1="num1" :number2="num2" @num1changed="num1changed" @num2changed="num2changed"></cpn>
+		</div>
+
+		<template id="cpn">
+			<div>
+				<h2>props:{{number1}}</h2>
+				<h2>data:{{dnumber1}}</h2>
+				<input type="text" v-bind:value="dnumber1" @input="num1input">
+				<h2>props:{{number2}}</h2>
+				<h2>data:{{dnumber2}}</h2>
+				<input type="text" v-bind:value="dnumber2" @input="num2input">
+			</div>
+		</template>
+
+		<script>
+			const app = new Vue({
+				el: "#app",
+				data: {
+					num1: 1,
+					num2: 0
+				},
+				methods: {
+					num1changed(value) {
+						this.num1 = parseInt(value);
+					},
+					num2changed(value) {
+						this.num2 = parseInt(value);
+					}
+				},
+				components: {
+					cpn: {
+						template: "#cpn",
+						props: {
+							number1: Number,
+							number2: {
+								type: Number,
+								required: true
+							}
+						},
+						data() {
+							return {
+								dnumber1: this.number1,
+								dnumber2: this.number2
+							}
+						},
+						
+						// methods: {
+						// 	num1input(event) {
+						// 		this.dnumber1 = event.target.value;
+						// 		this.$emit('num1changed', this.dnumber1);
+						// 		this.dnumber2 = this.dnumber1 * 100;
+						// 		this.$emit('num2changed', this.dnumber2);
+						// 	},
+						// 	num2input(event) {
+						// 		this.dnumber2 = event.target.value;
+						// 		this.$emit('num2changed', this.dnumber2);
+						// 		this.dnumber1 = this.dnumber2 / 100;
+						// 		this.$emit('num1changed', this.dnumber1);
+						// 	}
+						// }
+						
+						watch: {
+							dnumber1(newValue) {	//// 函数名为监听的变量名
+								this.dnumber2 = newValue * 100;
+								this.$emit('num1changed', newValue);
+							},
+							dnumber2(newValue) {
+								this.dnumber1 = newValue / 100;
+								this.$emit('num2changed', newValue);
+							}
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
