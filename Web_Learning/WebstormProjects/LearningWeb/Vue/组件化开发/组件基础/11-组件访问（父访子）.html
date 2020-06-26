@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>11-组件访问（父访子）</title>
+		<script src="../vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<cpn ref="aaa"></cpn>
+			<button @click="btnClick">按钮</button>
+		</div>
+
+		<template id="cpn">
+			<div>
+				<h2>我是子组件</h2>
+			</div>
+		</template>
+
+		<script>
+			const vm = new Vue({
+				el: "#app",
+				data: {
+
+				},
+				methods: {
+					btnClick() {
+						// console.log(this.$children); ///访问子组件
+						// this.$children[0].showMessage();
+						// console.log(this.$children[0].name);
+						
+						/// 默认是一个空对象，需要添加 ref 属性
+						console.log(this.$refs.aaa);	/// 多使用 **** $refs ****
+					}
+				},
+				components: {
+					cpn: {
+						template: "#cpn",
+						data() {
+							return {
+								name: "我是子组件"
+							}
+						},
+						methods: {
+							showMessage() {
+								console.log("Show message...");
+							}
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

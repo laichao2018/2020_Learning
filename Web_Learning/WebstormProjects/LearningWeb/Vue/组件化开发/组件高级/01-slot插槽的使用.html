@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>01-slot插槽的使用</title>
+		<script src="../../vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<cpn></cpn>
+			
+			<cpn>
+				<h2>插槽的替代</h2>
+			</cpn>
+			
+			<cpn>
+				<h1>我是标题</h1>
+				<p>========= 我是组件 =========</p>
+			</cpn>
+		</div>
+
+		<template id="cpn">
+			<div>
+				<h1>我是标题</h1>
+				<p>========= 我是组件 =========</p>
+				<slot><button>按钮</button></slot>
+			</div>
+		</template>
+
+		<script>
+			const vm = new Vue({
+				el: "#app",
+				components: {
+					cpn: {
+						template: "#cpn"
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

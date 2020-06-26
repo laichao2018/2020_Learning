@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>04-作用域插槽</title>
+		<script src="../../vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<cpn></cpn>
+			<cpn>
+				<template slot-scope="slot">
+					<!-- 更换一种展示方式 -->
+					<!-- <span v-for="item in slot.data">{{item}} === </span> -->
+					<span>{{slot.data.join('  ****  ')}}</span>
+				</template>
+			</cpn>
+		</div>
+		
+		<template id="cpn">
+			<div>
+				<slot :data="pLanguage">
+					<ul>
+						<li v-for="item in pLanguage">{{item}}</li>
+					</ul>
+				</slot>
+			</div>
+		</template>
+
+		<script>
+			const vm = new Vue({
+				el: "#app",
+				data: {
+					message: "Hello Vue"
+				},
+				components: {
+					cpn: {
+						template: "#cpn",
+						data() {
+							return {
+								pLanguage: ['JavaScript', 'Go', 'C++','Python']
+							}
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
