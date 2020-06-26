@@ -6,6 +6,7 @@ VS2019Projects/ReadCsvFile/.vs
 /VS2019Projects/ReadCsvFile/x64
 /.gitattributes
 /VS2019Projects/Project1
+/Web_Learning/WebstormProjects/LearningWeb/Vue/WebPack/node_modules
 
 *.mp4
 *.avi
