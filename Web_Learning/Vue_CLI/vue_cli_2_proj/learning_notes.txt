@@ -1,0 +1,6 @@
+===> .babelrc 文件用于转换ES6的，以适用各种浏览器
+
+===> .editorconfig 用于对代码的统一（比如缩进，字符编码等）
+end_of_line = lf  =====>  lf为系统的换行符
+
+===> 设置自动打开浏览器的文件在 config/index.js [autoOpenBrowser]

@@ -12,7 +12,6 @@ require('./CSS/normal.css');
 
 //// 添加less文件依赖
 require('./CSS/special.less');
-// document.writeln('<h2>你好啊，李银河！</h2>');
 
 //// 使用Vue进行开发
 import Vue from 'vue'
