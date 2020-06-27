@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>关于箭头函数的学习</title>
+</head>
+
+<body>
+    <script>
+        // //// 定义函数的方式
+        // const fun = function{
+
+        // };
+
+        // const obj = {
+        //     obj_fun() {
+
+        //     }
+        // }
+
+        // /// ES6中的箭头函数
+        // const Arrow = () => {
+
+        // }
+
+        /// 两个参数的问题
+        const sum = (num01, num02) => {
+            return num01 + num02;
+        }
+
+        /// 一个参数的问题
+        // const power = num => {  }  ///两种写法
+
+        const power = (num) => {
+            return num * num;
+        }
+
+
+        /// 返回值的问题
+        const test = () => {
+            ////打印 Hello World
+            console.log("hello world");
+        }
+
+        //// 函数只有一行代码的问题
+        //// 直接返回 num * num 的结果
+        const multi = (num) => num * num;
+        const printMessage = (res) => console.log(res);
+
+        ///箭头函数中this引用就是最近作用域中的this
+        /// 一层一层查找直到有this的定义
+
+    </script>
+</body>
+
+</html>
