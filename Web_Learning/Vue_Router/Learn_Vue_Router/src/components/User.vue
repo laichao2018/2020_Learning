@@ -19,6 +19,9 @@ export default {
     btnClick() {
       console.log(this.$router);
     }
+  },
+  created(){
+    document.title='用户';
   }
 };
 </script>

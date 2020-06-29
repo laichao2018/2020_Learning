@@ -9,7 +9,10 @@
 
 <script>
 export default {
-  name: "profile"
+  name: "profile",
+  created(){
+    document.title='我的界面';
+  }
 };
 </script>
 
