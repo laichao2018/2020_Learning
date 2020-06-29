@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Cesium Project</title>
+    <script src="./JavaScript/Cesium/Cesium.js"></script>
+    <link rel="stylesheet" href="./JavaScript/Cesium/Widgets/widgets.css">
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0%;
+            padding: 0%;
+        }
+
+        #cesium_init {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cesium_init"></div>
+    <script>
+        var geeMetadata = new Cesium.GoogleEarthEnterpriseMetadata('http://www.earthenterprise.org/3d');
+        var gee = new Cesium.GoogleEarthEnterpriseImageryProvider({
+            metadata: geeMetadata
+        });
+
+
+
+        /// Viewer 大写
+        const viewer = new Cesium.Viewer('cesium_init', {
+            baseLayerPicker: false,
+            imageProvider: gee,
+            terrainProvider: Cesium.createWorldTerrain(),
+        });
+
+        viewer.camera.setView({
+            destination: Cesium.Cartesian3.fromDegrees(116.39, 39.9, 150.0),
+            orientation: {
+                heading: Cesium.Math.toRadians(0.0),
+                pitch: Cesium.Math.toRadians(0),
+                roll: 0.0
+            }
+        })
+
+        /// load 3dTitles
+        var city = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({ url: Cesium.IonRessource.fromAssetId(3839) }));
+        var transparentstyle = new Cesium.Cesium3DTilestyle({
+            color: "color('white',0.3)",
+            show: true
+        });
+    </script>
+</body>
+
+</html>
