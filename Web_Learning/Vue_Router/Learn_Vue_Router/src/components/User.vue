@@ -21,7 +21,7 @@ export default {
     }
   },
   created(){
-    document.title='用户';
+    document.title='用户';  
   }
 };
 </script>
