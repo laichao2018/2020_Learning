@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>02-基本使用2</title>
+	</head>
+	<body>
+		<script>
+			new Promise((resolve, reject) => {
+				setTimeout(() => {
+					resolve('Hello World');
+					reject('Error Message');
+				}, 1000)
+			}).then((data) => {
+				console.log(data);
+			}, (error) => {
+				console.log(error);	//// 相当于之前的catch函数
+			})
+		</script>
+	</body>
+</html>

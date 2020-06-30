@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>03-Promise的链式调用</title>
+	</head>
+	<body>
+		<script>
+			// new Promise((resolve, reject) => {
+			// 	setTimeout(() => {
+			// 		resolve('aaa');
+			// 	}, 1000)
+			// }).then((res) => {
+			// 	//// 自己处理10行代码
+			// 	console.log(res, '第一层的10行代码处理');
+			// 	//// 对结果进行第一次处理
+			// 	return Promise.resolve(res + '111');
+			// }).then((res) => {
+			// 	console.log(res, '第二层的10行处理代码');
+			// 	return Promise.resolve(res + '222');
+			// }).then((res) => {
+			// 	console.log(res, '第三层的10行代码处理');
+			// })
+			
+			/// 上面方法的简写
+			/// 省略Promise.resolve，直接return参数
+			new Promise((resolve, reject) => {
+				setTimeout(() => {
+					resolve('aaa');
+				}, 1000)
+			}).then((res) => {
+				//// 自己处理10行代码
+				console.log(res, '第一层的10行代码处理');
+				//// 对结果进行第一次处理
+				return res + '111';
+			}).then((res) => {
+				console.log(res, '第二层的10行处理代码');
+				return res + '222';
+			}).then((res) => {
+				console.log(res, '第三层的10行代码处理');
+			})
+		</script>
+	</body>
+</html>

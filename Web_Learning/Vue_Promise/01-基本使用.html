@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>01-基本使用</title>
+	</head>
+	<body>
+		<script>
+			//// 一般情况下，执行异步操作时，使用Promise对这个异步操作进行封装
+			//// new -> 构造函数(保存状态信息，执行传入的函数)
+			//// 在执行我们传入的回调函数时，会传入两个参数，resolve和reject，而他们本身又是函数
+			new Promise((resolve, reject) => {
+				setTimeout(() => {
+					//// 成功的时候调用resolve
+					resolve('Hello World.');
+					
+					//// 失败的时候调用reject
+					reject('Error Message');	//// Error Messga作为参数传入到了catch中箭头函数
+				}, 1000)
+			}).then((data) => {
+				//// 代码执行
+				console.log(data);
+			}).catch((Error)=>{
+				console.log(Error);
+			})
+		</script>
+	</body>
+</html>
