@@ -1,12 +1,12 @@
 <template>
-  <div class="tab-bar-item">
+  <div class="tab-bar-item" @click="itemClick">
     <div v-if="!isActive">
       <slot name="item-icon"></slot>
     </div>
     <div v-else>
       <slot name="item-icon-active"></slot>
     </div>
-    <div :class="{active:isActive}">
+    <div :style="activeStyle">
       <slot name="item-text"></slot>
     </div>
   </div>
@@ -15,9 +15,28 @@
 <script>
   export default {
     name: 'TabbarItem',
-    data() {
-      return {
-        isActive: true
+    props: {
+      path: String,
+      activeColor: {
+        type: String,
+        default: 'red'
+      }
+    },
+    computed: {
+      isActive() {
+        return this.$route.path.indexOf(this.path) !== -1;
+      },
+      activeStyle() {
+        return this.isActive ? {
+          color: this.activeColor
+        } : {}
+      }
+    },
+    methods: {
+      ////  点击底部目录的监听事件
+      itemClick() {
+        // console.log('itemClick');
+        this.$router.push(this.path);
       }
     }
   }
@@ -40,6 +59,6 @@
   }
 
   .active {
-    color: red;
+    color: blue;
   }
 </style>
